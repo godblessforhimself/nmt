@@ -270,7 +270,7 @@ def _create_pretrained_emb_from_txt(
   emb_mat_const = tf.slice(emb_mat, [num_trainable_tokens, 0], [-1, -1])
   with tf.compat.v1.variable_scope(scope or "pretrain_embeddings", dtype=dtype) as scope:
     with tf.device(_get_embed_device(num_trainable_tokens)):
-      emb_mat_var = tf.get_variable(
+      emb_mat_var = tf.compat.v1.get_variable(
           "emb_mat_var", [num_trainable_tokens, emb_size])
   return tf.concat([emb_mat_var, emb_mat_const], 0)
 
@@ -282,7 +282,7 @@ def _create_or_load_embed(embed_name, vocab_file, embed_file,
     embedding = _create_pretrained_emb_from_txt(vocab_file, embed_file)
   else:
     with tf.device(_get_embed_device(vocab_size)):
-      embedding = tf.get_variable(
+      embedding = tf.compat.v1.get_variable(
           embed_name, [vocab_size, embed_size], dtype)
   return embedding
 
@@ -514,7 +514,7 @@ def gradient_clip(gradients, max_gradient_norm):
       gradients, max_gradient_norm)
   gradient_norm_summary = [ tf.compat.v1.summary.scalar("grad_norm", gradient_norm)]
   gradient_norm_summary.append(
-       tf.compat.v1.summary.scalar("clipped_gradient", tf.global_norm(clipped_gradients)))
+       tf.compat.v1.summary.scalar("clipped_gradient", tf.linalg.global_norm(clipped_gradients)))
 
   return clipped_gradients, gradient_norm_summary, gradient_norm
 
@@ -593,7 +593,7 @@ def avg_checkpoints(model_dir, num_last_checkpoints, global_step,
   # variables into the avg_model_dir.
   with tf.Graph().as_default():
     tf_vars = [
-        tf.get_variable(v, shape=var_values[v].shape, dtype=var_dtypes[name])
+        tf.compat.v1.get_variable(v, shape=var_values[v].shape, dtype=var_dtypes[name])
         for v in var_values
     ]
 

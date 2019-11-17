@@ -187,7 +187,7 @@ class BaseModel(object):
       self.predict_count = tf.reduce_sum(
           self.iterator.target_sequence_length)
 
-    params = tf.trainable_variables()
+    params = tf.compat.v1.trainable_variables()
 
     # Gradients and SGD update operation for training the model.
     # Arrange for the embedding vars to appear at the beginning.
@@ -245,7 +245,7 @@ class BaseModel(object):
     #   learing_rate *= warmup_factor ** (warmup_steps - step)
     if warmup_scheme == "t2t":
       # 0.01^(1/warmup_steps): we start with a lr, 100 times smaller
-      warmup_factor = tf.exp(tf.log(0.01) / warmup_steps)
+      warmup_factor = tf.exp(tf.math.log(0.01) / warmup_steps)
       inv_decay = warmup_factor**(
           tf.to_float(warmup_steps - self.global_step))
     else:
@@ -319,8 +319,8 @@ class BaseModel(object):
   def _get_train_summary(self):
     """Get train summary."""
     train_summary = tf.compat.v1.summary.merge(
-        [tf.summary.scalar("lr", self.learning_rate),
-         tf.summary.scalar("train_loss", self.train_loss)] +
+        [tf.compat.v1.summary.scalar("lr", self.learning_rate),
+         tf.compat.v1.summary.scalar("train_loss", self.train_loss)] +
         self.grad_norm_summary)
     return train_summary
 
@@ -370,12 +370,12 @@ class BaseModel(object):
 
     # Projection
     if not self.extract_encoder_layers:
-      with tf.variable_scope(scope or "build_network"):
-        with tf.variable_scope("decoder/output_projection"):
+      with tf.compat.v1.variable_scope(scope or "build_network"):
+        with tf.compat.v1.variable_scope("decoder/output_projection"):
           self.output_layer = tf.compat.v1.layers.Dense(
               self.tgt_vocab_size, use_bias=False, name="output_projection")
 
-    with tf.variable_scope(scope or "dynamic_seq2seq", dtype=self.dtype):
+    with tf.compat.v1.variable_scope(scope or "dynamic_seq2seq", dtype=self.dtype):
       # Encoder
       if hparams.language_model:  # no encoder for language modeling
         utils.print_out("  language modeling: no encoder")
@@ -468,7 +468,7 @@ class BaseModel(object):
         hparams, iterator.source_sequence_length)
 
     ## Decoder.
-    with tf.variable_scope("decoder") as decoder_scope:
+    with tf.compat.v1.variable_scope("decoder") as decoder_scope:
       cell, decoder_initial_state = self._build_decoder_cell(
           hparams, encoder_outputs, encoder_state,
           iterator.source_sequence_length)
@@ -745,7 +745,7 @@ class Model(BaseModel):
     if self.time_major:
       sequence = tf.transpose(sequence)
 
-    with tf.variable_scope("encoder") as scope:
+    with tf.compat.v1.variable_scope("encoder") as scope:
       dtype = scope.dtype
 
       self.encoder_emb_inp = self.encoder_emb_lookup_fn(

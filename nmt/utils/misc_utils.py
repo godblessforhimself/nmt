@@ -89,7 +89,7 @@ def print_hparams(hparams, skip_patterns=None, header=None):
 def load_hparams(model_dir):
   """Load hparams from an existing model directory."""
   hparams_file = os.path.join(model_dir, "hparams")
-  if tf.gfile.Exists(hparams_file):
+  if tf.io.gfile.exists(hparams_file):
     print_out("# Loading hparams from %s" % hparams_file)
     with codecs.getreader("utf-8")( tf.io.gfile.GFile(hparams_file, "rb")) as f:
       try:
@@ -105,7 +105,7 @@ def load_hparams(model_dir):
 
 def maybe_parse_standard_hparams(hparams, hparams_path):
   """Override hparams values with existing standard hparams config."""
-  if hparams_path and tf.gfile.Exists(hparams_path):
+  if hparams_path and tf.io.gfile.exists(hparams_path):
     print_out("# Loading standard hparams from %s" % hparams_path)
     with codecs.getreader("utf-8")( tf.io.gfile.GFile(hparams_path, "rb")) as f:
       hparams.parse_json(f.read())
