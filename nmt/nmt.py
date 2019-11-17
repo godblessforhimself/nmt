@@ -522,7 +522,7 @@ def extend_hparams(hparams):
     src_embed_file = hparams.embed_prefix + "." + hparams.src
     tgt_embed_file = hparams.embed_prefix + "." + hparams.tgt
 
-    if tf.gfile.Exists(src_embed_file):
+    if tf.io.gfile.exists(src_embed_file):
       utils.print_out("  src_embed_file %s exist" % src_embed_file)
       hparams.src_embed_file = src_embed_file
 
@@ -532,7 +532,7 @@ def extend_hparams(hparams):
     else:
       utils.print_out("  src_embed_file %s doesn't exist" % src_embed_file)
 
-    if tf.gfile.Exists(tgt_embed_file):
+    if tf.io.gfile.exists(tgt_embed_file):
       utils.print_out("  tgt_embed_file %s exist" % tgt_embed_file)
       hparams.tgt_embed_file = tgt_embed_file
 
@@ -545,13 +545,13 @@ def extend_hparams(hparams):
   # Evaluation
   for metric in hparams.metrics:
     best_metric_dir = os.path.join(hparams.out_dir, "best_" + metric)
-    tf.gfile.MakeDirs(best_metric_dir)
+     tf.io.gfile.makedirs(best_metric_dir)
     _add_argument(hparams, "best_" + metric, 0, update=False)
     _add_argument(hparams, "best_" + metric + "_dir", best_metric_dir)
 
     if getattr(hparams, "avg_ckpts", None):
       best_metric_dir = os.path.join(hparams.out_dir, "avg_best_" + metric)
-      tf.gfile.MakeDirs(best_metric_dir)
+       tf.io.gfile.makedirs(best_metric_dir)
       _add_argument(hparams, "avg_best_" + metric, 0, update=False)
       _add_argument(hparams, "avg_best_" + metric + "_dir", best_metric_dir)
 
@@ -626,7 +626,7 @@ def run_main(flags, default_hparams, train_fn, inference_fn, target_session=""):
 
   # GPU device
   utils.print_out(
-      "# Devices visible to TensorFlow: %s" % repr(tf.Session().list_devices()))
+      "# Devices visible to TensorFlow: %s" % repr(tf.compat.v1.Session().list_devices()))
 
   # Random
   random_seed = flags.random_seed
@@ -637,16 +637,16 @@ def run_main(flags, default_hparams, train_fn, inference_fn, target_session=""):
 
   # Model output directory
   out_dir = flags.out_dir
-  if out_dir and not tf.gfile.Exists(out_dir):
+  if out_dir and not tf.io.gfile.exists(out_dir):
     utils.print_out("# Creating output directory %s ..." % out_dir)
-    tf.gfile.MakeDirs(out_dir)
+     tf.io.gfile.makedirs(out_dir)
 
   # Load hparams.
   loaded_hparams = False
   if flags.ckpt:  # Try to load hparams from the same directory as ckpt
     ckpt_dir = os.path.dirname(flags.ckpt)
     ckpt_hparams_file = os.path.join(ckpt_dir, "hparams")
-    if tf.gfile.Exists(ckpt_hparams_file) or flags.hparams_path:
+    if tf.io.gfile.exists(ckpt_hparams_file) or flags.hparams_path:
       hparams = create_or_load_hparams(
           ckpt_dir, default_hparams, flags.hparams_path,
           save_hparams=False)
@@ -663,7 +663,7 @@ def run_main(flags, default_hparams, train_fn, inference_fn, target_session=""):
     trans_file = flags.inference_output_file
     assert trans_file
     trans_dir = os.path.dirname(trans_file)
-    if not tf.gfile.Exists(trans_dir): tf.gfile.MakeDirs(trans_dir)
+    if not tf.io.gfile.exists(trans_dir):  tf.io.gfile.makedirs(trans_dir)
 
     # Inference indices
     hparams.inference_indices = None
@@ -680,7 +680,7 @@ def run_main(flags, default_hparams, train_fn, inference_fn, target_session=""):
 
     # Evaluation
     ref_file = flags.inference_ref_file
-    if ref_file and tf.gfile.Exists(trans_file):
+    if ref_file and tf.io.gfile.exists(trans_file):
       for metric in hparams.metrics:
         score = evaluation_utils.evaluate(
             ref_file,
@@ -704,4 +704,4 @@ if __name__ == "__main__":
   nmt_parser = argparse.ArgumentParser()
   add_arguments(nmt_parser)
   FLAGS, unparsed = nmt_parser.parse_known_args()
-  tf.app.run(main=main, argv=[sys.argv[0]] + unparsed)
+  tf.compat.v1.app.run(main=main, argv=[sys.argv[0]] + unparsed)

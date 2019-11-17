@@ -97,7 +97,7 @@ class BaseModel(object):
       self._set_train_or_infer(res, reverse_target_vocab_table, hparams)
 
     # Saver
-    self.saver = tf.train.Saver(
+    self.saver = tf.compat.v1.train.Saver(
         tf.global_variables(), max_to_keep=hparams.num_keep_ckpts)
 
   def _set_params_initializer(self,
@@ -159,7 +159,7 @@ class BaseModel(object):
     self.random_seed = hparams.random_seed
     initializer = model_helper.get_initializer(
         hparams.init_op, self.random_seed, hparams.init_weight)
-    tf.get_variable_scope().set_initializer(initializer)
+    tf.compat.v1.get_variable_scope().set_initializer(initializer)
 
     # Embeddings
     if extra_args and extra_args.encoder_emb_lookup_fn:
@@ -200,7 +200,7 @@ class BaseModel(object):
 
       # Optimizer
       if hparams.optimizer == "sgd":
-        opt = tf.train.GradientDescentOptimizer(self.learning_rate)
+        opt = tf.compat.v1.train.GradientDescentOptimizer(self.learning_rate)
       elif hparams.optimizer == "adam":
         opt = tf.train.AdamOptimizer(self.learning_rate)
       else:
@@ -292,7 +292,7 @@ class BaseModel(object):
     return tf.cond(
         self.global_step < start_decay_step,
         lambda: self.learning_rate,
-        lambda: tf.train.exponential_decay(
+        lambda: tf.compat.v1.train.exponential_decay(
             self.learning_rate,
             (self.global_step - start_decay_step),
             decay_steps, decay_factor, staircase=True),
@@ -318,7 +318,7 @@ class BaseModel(object):
 
   def _get_train_summary(self):
     """Get train summary."""
-    train_summary = tf.summary.merge(
+    train_summary = tf.compat.v1.summary.merge(
         [tf.summary.scalar("lr", self.learning_rate),
          tf.summary.scalar("train_loss", self.train_loss)] +
         self.grad_norm_summary)
@@ -372,7 +372,7 @@ class BaseModel(object):
     if not self.extract_encoder_layers:
       with tf.variable_scope(scope or "build_network"):
         with tf.variable_scope("decoder/output_projection"):
-          self.output_layer = tf.layers.Dense(
+          self.output_layer = tf.compat.v1.layers.Dense(
               self.tgt_vocab_size, use_bias=False, name="output_projection")
 
     with tf.variable_scope(scope or "dynamic_seq2seq", dtype=self.dtype):

@@ -87,13 +87,13 @@ def create_train_model(
 
   graph = tf.Graph()
 
-  with graph.as_default(), tf.container(scope or "train"):
+  with graph.as_default(),  tf.compat.v1.container(scope or "train"):
     src_vocab_table, tgt_vocab_table = vocab_utils.create_vocab_tables(
         src_vocab_file, tgt_vocab_file, hparams.share_vocab)
 
-    src_dataset = tf.data.TextLineDataset(tf.gfile.Glob(src_file))
-    tgt_dataset = tf.data.TextLineDataset(tf.gfile.Glob(tgt_file))
-    skip_count_placeholder = tf.placeholder(shape=(), dtype=tf.int64)
+    src_dataset = tf.data.TextLineDataset(tf.io.gfile.glob(src_file))
+    tgt_dataset = tf.data.TextLineDataset(tf.io.gfile.glob(tgt_file))
+    skip_count_placeholder = tf.compat.v1.placeholder(shape=(), dtype=tf.int64)
 
     iterator = iterator_utils.get_iterator(
         src_dataset,
@@ -146,14 +146,14 @@ def create_eval_model(model_creator, hparams, scope=None, extra_args=None):
   tgt_vocab_file = hparams.tgt_vocab_file
   graph = tf.Graph()
 
-  with graph.as_default(), tf.container(scope or "eval"):
+  with graph.as_default(),  tf.compat.v1.container(scope or "eval"):
     src_vocab_table, tgt_vocab_table = vocab_utils.create_vocab_tables(
         src_vocab_file, tgt_vocab_file, hparams.share_vocab)
     reverse_tgt_vocab_table = lookup_ops.index_to_string_table_from_file(
         tgt_vocab_file, default_value=vocab_utils.UNK)
 
-    src_file_placeholder = tf.placeholder(shape=(), dtype=tf.string)
-    tgt_file_placeholder = tf.placeholder(shape=(), dtype=tf.string)
+    src_file_placeholder = tf.compat.v1.placeholder(shape=(), dtype=tf.string)
+    tgt_file_placeholder = tf.compat.v1.placeholder(shape=(), dtype=tf.string)
     src_dataset = tf.data.TextLineDataset(src_file_placeholder)
     tgt_dataset = tf.data.TextLineDataset(tgt_file_placeholder)
     iterator = iterator_utils.get_iterator(
@@ -199,14 +199,14 @@ def create_infer_model(model_creator, hparams, scope=None, extra_args=None):
   src_vocab_file = hparams.src_vocab_file
   tgt_vocab_file = hparams.tgt_vocab_file
 
-  with graph.as_default(), tf.container(scope or "infer"):
+  with graph.as_default(),  tf.compat.v1.container(scope or "infer"):
     src_vocab_table, tgt_vocab_table = vocab_utils.create_vocab_tables(
         src_vocab_file, tgt_vocab_file, hparams.share_vocab)
     reverse_tgt_vocab_table = lookup_ops.index_to_string_table_from_file(
         tgt_vocab_file, default_value=vocab_utils.UNK)
 
-    src_placeholder = tf.placeholder(shape=[None], dtype=tf.string)
-    batch_size_placeholder = tf.placeholder(shape=[], dtype=tf.int64)
+    src_placeholder = tf.compat.v1.placeholder(shape=[None], dtype=tf.string)
+    batch_size_placeholder = tf.compat.v1.placeholder(shape=[], dtype=tf.int64)
 
     src_dataset = tf.data.Dataset.from_tensor_slices(
         src_placeholder)
@@ -268,7 +268,7 @@ def _create_pretrained_emb_from_txt(
       [emb_dict[token] for token in vocab], dtype=dtype.as_numpy_dtype())
   emb_mat = tf.constant(emb_mat)
   emb_mat_const = tf.slice(emb_mat, [num_trainable_tokens, 0], [-1, -1])
-  with tf.variable_scope(scope or "pretrain_embeddings", dtype=dtype) as scope:
+  with tf.compat.v1.variable_scope(scope or "pretrain_embeddings", dtype=dtype) as scope:
     with tf.device(_get_embed_device(num_trainable_tokens)):
       emb_mat_var = tf.get_variable(
           "emb_mat_var", [num_trainable_tokens, emb_size])
@@ -355,7 +355,7 @@ def create_emb_for_encoder_and_decoder(share_vocab,
         "Can't set num_dec_partitions > 1 when using pretrained decdoer "
         "embedding")
 
-  with tf.variable_scope(
+  with tf.compat.v1.variable_scope(
       scope or "embeddings", dtype=dtype, partitioner=enc_partitioner) as scope:
     # Share embedding
     if share_vocab:
@@ -373,14 +373,14 @@ def create_emb_for_encoder_and_decoder(share_vocab,
       embedding_decoder = embedding_encoder
     else:
       if not use_char_encode:
-        with tf.variable_scope("encoder", partitioner=enc_partitioner):
+        with tf.compat.v1.variable_scope("encoder", partitioner=enc_partitioner):
           embedding_encoder = _create_or_load_embed(
               "embedding_encoder", src_vocab_file, src_embed_file,
               src_vocab_size, src_embed_size, dtype)
       else:
         embedding_encoder = None
 
-      with tf.variable_scope("decoder", partitioner=dec_partitioner):
+      with tf.compat.v1.variable_scope("decoder", partitioner=dec_partitioner):
         embedding_decoder = _create_or_load_embed(
             "embedding_decoder", tgt_vocab_file, tgt_embed_file,
             tgt_vocab_size, tgt_embed_size, dtype)
@@ -512,9 +512,9 @@ def gradient_clip(gradients, max_gradient_norm):
   """Clipping gradients of a model."""
   clipped_gradients, gradient_norm = tf.clip_by_global_norm(
       gradients, max_gradient_norm)
-  gradient_norm_summary = [tf.summary.scalar("grad_norm", gradient_norm)]
+  gradient_norm_summary = [ tf.compat.v1.summary.scalar("grad_norm", gradient_norm)]
   gradient_norm_summary.append(
-      tf.summary.scalar("clipped_gradient", tf.global_norm(clipped_gradients)))
+       tf.compat.v1.summary.scalar("clipped_gradient", tf.global_norm(clipped_gradients)))
 
   return clipped_gradients, gradient_norm_summary, gradient_norm
 
@@ -597,7 +597,7 @@ def avg_checkpoints(model_dir, num_last_checkpoints, global_step,
         for v in var_values
     ]
 
-    placeholders = [tf.placeholder(v.dtype, shape=v.shape) for v in tf_vars]
+    placeholders = [tf.compat.v1.placeholder(v.dtype, shape=v.shape) for v in tf_vars]
     assign_ops = [tf.assign(v, p) for (v, p) in zip(tf_vars, placeholders)]
     global_step_var = tf.Variable(
         global_step, name=global_step_name, trainable=False)

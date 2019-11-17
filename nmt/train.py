@@ -497,7 +497,7 @@ def train(hparams, scope=None, target_session=""):
         train_model.model, model_dir, train_sess, "train")
 
   # Summary writer
-  summary_writer = tf.summary.FileWriter(
+  summary_writer = tf.compat.v1.summary.FileWriter(
       os.path.join(out_dir, summary_name), train_model.graph)
 
   # First evaluation
@@ -613,7 +613,7 @@ def train(hparams, scope=None, target_session=""):
   utils.print_out("# Start evaluating saved best models.")
   for metric in hparams.metrics:
     best_model_dir = getattr(hparams, "best_" + metric + "_dir")
-    summary_writer = tf.summary.FileWriter(
+    summary_writer = tf.compat.v1.summary.FileWriter(
         os.path.join(best_model_dir, summary_name), infer_model.graph)
     result_summary, best_global_step, _ = run_full_eval(
         best_model_dir, infer_model, infer_sess, eval_model, eval_sess, hparams,
@@ -624,7 +624,7 @@ def train(hparams, scope=None, target_session=""):
 
     if avg_ckpts:
       best_model_dir = getattr(hparams, "avg_best_" + metric + "_dir")
-      summary_writer = tf.summary.FileWriter(
+      summary_writer = tf.compat.v1.summary.FileWriter(
           os.path.join(best_model_dir, summary_name), infer_model.graph)
       result_summary, best_global_step, _ = run_full_eval(
           best_model_dir, infer_model, infer_sess, eval_model, eval_sess,
