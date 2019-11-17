@@ -1,4 +1,6 @@
 err.txt
 log.txt
 *__pycache__
+nohup.out
 .vscode
+*.pyc
