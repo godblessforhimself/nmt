@@ -1,4 +1,4 @@
 err.txt
 log.txt
 *__pycache__
-
+.vscode

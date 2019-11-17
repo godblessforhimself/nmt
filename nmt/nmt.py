@@ -545,13 +545,13 @@ def extend_hparams(hparams):
   # Evaluation
   for metric in hparams.metrics:
     best_metric_dir = os.path.join(hparams.out_dir, "best_" + metric)
-     tf.io.gfile.makedirs(best_metric_dir)
+    tf.io.gfile.makedirs(best_metric_dir)
     _add_argument(hparams, "best_" + metric, 0, update=False)
     _add_argument(hparams, "best_" + metric + "_dir", best_metric_dir)
 
     if getattr(hparams, "avg_ckpts", None):
       best_metric_dir = os.path.join(hparams.out_dir, "avg_best_" + metric)
-       tf.io.gfile.makedirs(best_metric_dir)
+      tf.io.gfile.makedirs(best_metric_dir)
       _add_argument(hparams, "avg_best_" + metric, 0, update=False)
       _add_argument(hparams, "avg_best_" + metric + "_dir", best_metric_dir)
 
@@ -639,7 +639,7 @@ def run_main(flags, default_hparams, train_fn, inference_fn, target_session=""):
   out_dir = flags.out_dir
   if out_dir and not tf.io.gfile.exists(out_dir):
     utils.print_out("# Creating output directory %s ..." % out_dir)
-     tf.io.gfile.makedirs(out_dir)
+    tf.io.gfile.makedirs(out_dir)
 
   # Load hparams.
   loaded_hparams = False
