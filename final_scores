@@ -1,0 +1,14 @@
+standard
+# Best bleu, step 11000 lr 0.125 step-time 0.28s wps 20.31K ppl 5.00 gN 5.96 dev ppl 9.93, dev bleu 21.8, test ppl 8.44, test bleu 24.3, Sat Dec  7 20:15:38 2019
+
+one
+# Best bleu, step 11000 lr 0.125 step-time 1.09s wps 5.17K ppl 5.36 gN 7.22 dev ppl 10.81, dev bleu 21.0, test ppl 9.47, test bleu 23.8, Sun Dec  8 00:32:22 2019
+
+two
+# Best bleu, step 12000 lr 0.125 step-time 0.31s wps 18.23K ppl 10.61 gN 5.31 dev ppl 14.51, dev bleu 15.7, test ppl 13.46, test bleu 17.6, Sun Dec  8 01:49:32 2019
+
+three
+# Best bleu, step 12000 lr 0.125 step-time 0.31s wps 18.04K ppl 9.91 gN 5.50 dev ppl 14.88, dev bleu 15.4, test ppl 14.24, test bleu 16.8, Sun Dec  8 03:07:23 2019
+
+four
+# Best bleu, step 12000 lr 0.125 step-time 0.31s wps 18.04K ppl 5.65 gN 6.02 dev ppl 9.86, dev bleu 21.6, test ppl 8.57, test bleu 24.3, Sun Dec  8 04:32:24 2019

@@ -32,7 +32,7 @@ from .utils import misc_utils as utils
 from .utils import vocab_utils
 
 utils.check_tensorflow_version()
-
+os.environ['CUDA_VISIBLE_DEVICES'] = '1'
 FLAGS = None
 
 INFERENCE_KEYS = ["src_max_len_infer", "tgt_max_len_infer", "subword_option",

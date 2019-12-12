@@ -1,0 +1,534 @@
+WARNING:tensorflow:
+The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+  * https://github.com/tensorflow/io (for I/O related ops)
+If you depend on functionality not listed there, please file an issue.
+
+W1208 01:49:37.598938 140184522934080 lazy_loader.py:50] 
+The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+  * https://github.com/tensorflow/io (for I/O related ops)
+If you depend on functionality not listed there, please file an issue.
+
+2019-12-08 01:49:37.600385: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcuda.so.1
+2019-12-08 01:49:37.608748: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: Tesla M60 major: 5 minor: 2 memoryClockRate(GHz): 1.1775
+pciBusID: 0000:85:00.0
+2019-12-08 01:49:37.608910: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.10.0
+2019-12-08 01:49:37.610505: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcublas.so.10.0
+2019-12-08 01:49:37.611994: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcufft.so.10.0
+2019-12-08 01:49:37.612255: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcurand.so.10.0
+2019-12-08 01:49:37.613978: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusolver.so.10.0
+2019-12-08 01:49:37.614887: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusparse.so.10.0
+2019-12-08 01:49:37.618391: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudnn.so.7
+2019-12-08 01:49:37.620345: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1763] Adding visible gpu devices: 0
+2019-12-08 01:49:37.620647: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2019-12-08 01:49:37.645336: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 3392090000 Hz
+2019-12-08 01:49:37.646508: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x5655137f5b20 executing computations on platform Host. Devices:
+2019-12-08 01:49:37.646527: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): <undefined>, <undefined>
+2019-12-08 01:49:37.647613: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: Tesla M60 major: 5 minor: 2 memoryClockRate(GHz): 1.1775
+pciBusID: 0000:85:00.0
+2019-12-08 01:49:37.647639: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.10.0
+2019-12-08 01:49:37.647650: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcublas.so.10.0
+2019-12-08 01:49:37.647659: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcufft.so.10.0
+2019-12-08 01:49:37.647668: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcurand.so.10.0
+2019-12-08 01:49:37.647677: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusolver.so.10.0
+2019-12-08 01:49:37.647685: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusparse.so.10.0
+2019-12-08 01:49:37.647694: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudnn.so.7
+2019-12-08 01:49:37.649600: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1763] Adding visible gpu devices: 0
+2019-12-08 01:49:37.649640: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.10.0
+2019-12-08 01:49:37.703661: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-12-08 01:49:37.703696: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 
+2019-12-08 01:49:37.703703: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N 
+2019-12-08 01:49:37.706680: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1326] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 7517 MB memory) -> physical GPU (device: 0, name: Tesla M60, pci bus id: 0000:85:00.0, compute capability: 5.2)
+2019-12-08 01:49:37.708230: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x5655145935d0 executing computations on platform CUDA. Devices:
+2019-12-08 01:49:37.708250: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Tesla M60, Compute Capability 5.2
+WARNING:tensorflow:From /home/jintao/files/nmt/nmt/utils/vocab_utils.py:114: The name tf.gfile.Exists is deprecated. Please use tf.io.gfile.exists instead.
+
+W1208 01:49:37.715695 140184522934080 deprecation_wrapper.py:119] From /home/jintao/files/nmt/nmt/utils/vocab_utils.py:114: The name tf.gfile.Exists is deprecated. Please use tf.io.gfile.exists instead.
+
+WARNING:tensorflow:From /home/jintao/files/nmt/nmt/utils/vocab_utils.py:103: The name tf.gfile.GFile is deprecated. Please use tf.io.gfile.GFile instead.
+
+W1208 01:49:37.715885 140184522934080 deprecation_wrapper.py:119] From /home/jintao/files/nmt/nmt/utils/vocab_utils.py:103: The name tf.gfile.GFile is deprecated. Please use tf.io.gfile.GFile instead.
+
+WARNING:tensorflow:From /home/jintao/files/nmt/nmt/utils/iterator_utils.py:235: group_by_window (from tensorflow.contrib.data.python.ops.grouping) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.data.experimental.group_by_window(...)`.
+W1208 01:49:37.842115 140184522934080 deprecation.py:323] From /home/jintao/files/nmt/nmt/utils/iterator_utils.py:235: group_by_window (from tensorflow.contrib.data.python.ops.grouping) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.data.experimental.group_by_window(...)`.
+WARNING:tensorflow:From /home/jintao/files/nmt/nmt/utils/iterator_utils.py:228: to_int64 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.cast` instead.
+W1208 01:49:37.848246 140184522934080 deprecation.py:323] From /home/jintao/files/nmt/nmt/utils/iterator_utils.py:228: to_int64 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.cast` instead.
+WARNING:tensorflow:From /home/jintao/files/nmt/nmt/utils/iterator_utils.py:239: DatasetV1.make_initializable_iterator (from tensorflow.python.data.ops.dataset_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `for ... in dataset:` to iterate over a dataset. If using `tf.estimator`, return the `Dataset` object directly from your input function. As a last resort, you can use `tf.compat.v1.data.make_initializable_iterator(dataset)`.
+W1208 01:49:37.863762 140184522934080 deprecation.py:323] From /home/jintao/files/nmt/nmt/utils/iterator_utils.py:239: DatasetV1.make_initializable_iterator (from tensorflow.python.data.ops.dataset_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `for ... in dataset:` to iterate over a dataset. If using `tf.estimator`, return the `Dataset` object directly from your input function. As a last resort, you can use `tf.compat.v1.data.make_initializable_iterator(dataset)`.
+WARNING:tensorflow:From /home/jintao/files/nmt/nmt/gnmt_model.py:77: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+
+W1208 01:49:37.885783 140184522934080 deprecation_wrapper.py:119] From /home/jintao/files/nmt/nmt/gnmt_model.py:77: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+
+WARNING:tensorflow:From /home/jintao/files/nmt/nmt/model_helper.py:402: BasicLSTMCell.__init__ (from tensorflow.python.ops.rnn_cell_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This class is equivalent as tf.keras.layers.LSTMCell, and will be replaced by that in Tensorflow 2.0.
+W1208 01:49:37.887713 140184522934080 deprecation.py:323] From /home/jintao/files/nmt/nmt/model_helper.py:402: BasicLSTMCell.__init__ (from tensorflow.python.ops.rnn_cell_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This class is equivalent as tf.keras.layers.LSTMCell, and will be replaced by that in Tensorflow 2.0.
+WARNING:tensorflow:From /home/jintao/files/nmt/nmt/model.py:843: bidirectional_dynamic_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.Bidirectional(keras.layers.RNN(cell))`, which is equivalent to this API
+W1208 01:49:37.891841 140184522934080 deprecation.py:323] From /home/jintao/files/nmt/nmt/model.py:843: bidirectional_dynamic_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.Bidirectional(keras.layers.RNN(cell))`, which is equivalent to this API
+WARNING:tensorflow:From /home/jintao/miniconda3/lib/python3.7/site-packages/tensorflow/python/ops/rnn.py:464: dynamic_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.RNN(cell)`, which is equivalent to this API
+W1208 01:49:37.892088 140184522934080 deprecation.py:323] From /home/jintao/miniconda3/lib/python3.7/site-packages/tensorflow/python/ops/rnn.py:464: dynamic_rnn (from tensorflow.python.ops.rnn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `keras.layers.RNN(cell)`, which is equivalent to this API
+WARNING:tensorflow:From /home/jintao/miniconda3/lib/python3.7/site-packages/tensorflow/python/ops/rnn_cell_impl.py:738: calling Zeros.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+W1208 01:49:37.965483 140184522934080 deprecation.py:506] From /home/jintao/miniconda3/lib/python3.7/site-packages/tensorflow/python/ops/rnn_cell_impl.py:738: calling Zeros.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+WARNING:tensorflow:Entity <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7f22d79b10>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7f22d79b10>>: AssertionError: Bad argument number for Name: 3, expecting 4
+W1208 01:49:38.057753 140184522934080 ag_logging.py:145] Entity <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7f22d79b10>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7f22d79b10>>: AssertionError: Bad argument number for Name: 3, expecting 4
+WARNING:tensorflow:From /home/jintao/miniconda3/lib/python3.7/site-packages/tensorflow/python/ops/rnn.py:244: add_dispatch_support.<locals>.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+W1208 01:49:38.069289 140184522934080 deprecation.py:323] From /home/jintao/miniconda3/lib/python3.7/site-packages/tensorflow/python/ops/rnn.py:244: add_dispatch_support.<locals>.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+WARNING:tensorflow:Entity <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7f18f5ff50>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7f18f5ff50>>: AssertionError: Bad argument number for Name: 3, expecting 4
+W1208 01:49:38.293753 140184522934080 ag_logging.py:145] Entity <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7f18f5ff50>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7f18f5ff50>>: AssertionError: Bad argument number for Name: 3, expecting 4
+WARNING:tensorflow:Entity <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7f1b524810>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7f1b524810>>: AssertionError: Bad argument number for Name: 3, expecting 4
+W1208 01:49:38.483221 140184522934080 ag_logging.py:145] Entity <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7f1b524810>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7f1b524810>>: AssertionError: Bad argument number for Name: 3, expecting 4
+WARNING:tensorflow:From /home/jintao/files/nmt/nmt/model.py:445: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.cast` instead.
+W1208 01:49:38.512493 140184522934080 deprecation.py:323] From /home/jintao/files/nmt/nmt/model.py:445: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.cast` instead.
+WARNING:tensorflow:From /home/jintao/files/nmt/nmt/model.py:445: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.cast` instead.
+W1208 01:49:38.514476 140184522934080 deprecation.py:323] From /home/jintao/files/nmt/nmt/model.py:445: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.cast` instead.
+WARNING:tensorflow:Entity <bound method Dense.call of <tensorflow.python.layers.core.Dense object at 0x7f7f1379c2d0>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method Dense.call of <tensorflow.python.layers.core.Dense object at 0x7f7f1379c2d0>>: AssertionError: Bad argument number for Name: 3, expecting 4
+W1208 01:49:38.602892 140184522934080 ag_logging.py:145] Entity <bound method Dense.call of <tensorflow.python.layers.core.Dense object at 0x7f7f1379c2d0>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method Dense.call of <tensorflow.python.layers.core.Dense object at 0x7f7f1379c2d0>>: AssertionError: Bad argument number for Name: 3, expecting 4
+WARNING:tensorflow:From /home/jintao/files/nmt/nmt/gnmt_model.py:275: MultiRNNCell.__init__ (from tensorflow.python.ops.rnn_cell_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This class is equivalent as tf.keras.layers.StackedRNNCells, and will be replaced by that in Tensorflow 2.0.
+W1208 01:49:38.625454 140184522934080 deprecation.py:323] From /home/jintao/files/nmt/nmt/gnmt_model.py:275: MultiRNNCell.__init__ (from tensorflow.python.ops.rnn_cell_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+This class is equivalent as tf.keras.layers.StackedRNNCells, and will be replaced by that in Tensorflow 2.0.
+WARNING:tensorflow:Entity <bound method AttentionWrapper.call of <tensorflow.contrib.seq2seq.python.ops.attention_wrapper.AttentionWrapper object at 0x7f7f13567390>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method AttentionWrapper.call of <tensorflow.contrib.seq2seq.python.ops.attention_wrapper.AttentionWrapper object at 0x7f7f13567390>>: AttributeError: module 'gast' has no attribute 'Num'
+W1208 01:49:38.793435 140184522934080 ag_logging.py:145] Entity <bound method AttentionWrapper.call of <tensorflow.contrib.seq2seq.python.ops.attention_wrapper.AttentionWrapper object at 0x7f7f13567390>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method AttentionWrapper.call of <tensorflow.contrib.seq2seq.python.ops.attention_wrapper.AttentionWrapper object at 0x7f7f13567390>>: AttributeError: module 'gast' has no attribute 'Num'
+WARNING:tensorflow:Entity <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7f135ebcd0>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7f135ebcd0>>: AssertionError: Bad argument number for Name: 3, expecting 4
+W1208 01:49:38.900000 140184522934080 ag_logging.py:145] Entity <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7f135ebcd0>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7f135ebcd0>>: AssertionError: Bad argument number for Name: 3, expecting 4
+WARNING:tensorflow:Entity <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7f135eb190>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7f135eb190>>: AssertionError: Bad argument number for Name: 3, expecting 4
+W1208 01:49:39.056267 140184522934080 ag_logging.py:145] Entity <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7f135eb190>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7f135eb190>>: AssertionError: Bad argument number for Name: 3, expecting 4
+WARNING:tensorflow:Entity <bound method Dense.call of <tensorflow.python.layers.core.Dense object at 0x7f7f22d791d0>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method Dense.call of <tensorflow.python.layers.core.Dense object at 0x7f7f22d791d0>>: AssertionError: Bad argument number for Name: 3, expecting 4
+W1208 01:49:39.180163 140184522934080 ag_logging.py:145] Entity <bound method Dense.call of <tensorflow.python.layers.core.Dense object at 0x7f7f22d791d0>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method Dense.call of <tensorflow.python.layers.core.Dense object at 0x7f7f22d791d0>>: AssertionError: Bad argument number for Name: 3, expecting 4
+WARNING:tensorflow:From /home/jintao/files/nmt/nmt/model.py:101: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+
+W1208 01:49:40.759021 140184522934080 deprecation_wrapper.py:119] From /home/jintao/files/nmt/nmt/model.py:101: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+
+WARNING:tensorflow:Entity <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7e0c763290>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7e0c763290>>: AssertionError: Bad argument number for Name: 3, expecting 4
+W1208 01:49:41.047645 140184522934080 ag_logging.py:145] Entity <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7e0c763290>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7e0c763290>>: AssertionError: Bad argument number for Name: 3, expecting 4
+WARNING:tensorflow:Entity <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7e0c7f6d50>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7e0c7f6d50>>: AssertionError: Bad argument number for Name: 3, expecting 4
+W1208 01:49:41.224529 140184522934080 ag_logging.py:145] Entity <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7e0c7f6d50>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7e0c7f6d50>>: AssertionError: Bad argument number for Name: 3, expecting 4
+WARNING:tensorflow:Entity <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7e0c7f6d50>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7e0c7f6d50>>: AssertionError: Bad argument number for Name: 3, expecting 4
+W1208 01:49:41.402809 140184522934080 ag_logging.py:145] Entity <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7e0c7f6d50>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7e0c7f6d50>>: AssertionError: Bad argument number for Name: 3, expecting 4
+WARNING:tensorflow:Entity <bound method Dense.call of <tensorflow.python.layers.core.Dense object at 0x7f7e0c763290>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method Dense.call of <tensorflow.python.layers.core.Dense object at 0x7f7e0c763290>>: AssertionError: Bad argument number for Name: 3, expecting 4
+W1208 01:49:41.518264 140184522934080 ag_logging.py:145] Entity <bound method Dense.call of <tensorflow.python.layers.core.Dense object at 0x7f7e0c763290>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method Dense.call of <tensorflow.python.layers.core.Dense object at 0x7f7e0c763290>>: AssertionError: Bad argument number for Name: 3, expecting 4
+WARNING:tensorflow:Entity <bound method AttentionWrapper.call of <tensorflow.contrib.seq2seq.python.ops.attention_wrapper.AttentionWrapper object at 0x7f7e0c27aa90>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method AttentionWrapper.call of <tensorflow.contrib.seq2seq.python.ops.attention_wrapper.AttentionWrapper object at 0x7f7e0c27aa90>>: AttributeError: module 'gast' has no attribute 'Num'
+W1208 01:49:41.703605 140184522934080 ag_logging.py:145] Entity <bound method AttentionWrapper.call of <tensorflow.contrib.seq2seq.python.ops.attention_wrapper.AttentionWrapper object at 0x7f7e0c27aa90>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method AttentionWrapper.call of <tensorflow.contrib.seq2seq.python.ops.attention_wrapper.AttentionWrapper object at 0x7f7e0c27aa90>>: AttributeError: module 'gast' has no attribute 'Num'
+WARNING:tensorflow:Entity <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7e0c327ed0>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7e0c327ed0>>: AssertionError: Bad argument number for Name: 3, expecting 4
+W1208 01:49:41.801019 140184522934080 ag_logging.py:145] Entity <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7e0c327ed0>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7e0c327ed0>>: AssertionError: Bad argument number for Name: 3, expecting 4
+WARNING:tensorflow:Entity <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7e0c2db090>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7e0c2db090>>: AssertionError: Bad argument number for Name: 3, expecting 4
+W1208 01:49:42.040962 140184522934080 ag_logging.py:145] Entity <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7e0c2db090>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7e0c2db090>>: AssertionError: Bad argument number for Name: 3, expecting 4
+WARNING:tensorflow:Entity <bound method Dense.call of <tensorflow.python.layers.core.Dense object at 0x7f7e0c771b50>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method Dense.call of <tensorflow.python.layers.core.Dense object at 0x7f7e0c771b50>>: AssertionError: Bad argument number for Name: 3, expecting 4
+W1208 01:49:42.167341 140184522934080 ag_logging.py:145] Entity <bound method Dense.call of <tensorflow.python.layers.core.Dense object at 0x7f7e0c771b50>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method Dense.call of <tensorflow.python.layers.core.Dense object at 0x7f7e0c771b50>>: AssertionError: Bad argument number for Name: 3, expecting 4
+WARNING:tensorflow:Entity <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7df0541a90>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7df0541a90>>: AssertionError: Bad argument number for Name: 3, expecting 4
+W1208 01:49:42.430824 140184522934080 ag_logging.py:145] Entity <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7df0541a90>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7df0541a90>>: AssertionError: Bad argument number for Name: 3, expecting 4
+WARNING:tensorflow:Entity <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7df0532310>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7df0532310>>: AssertionError: Bad argument number for Name: 3, expecting 4
+W1208 01:49:42.607746 140184522934080 ag_logging.py:145] Entity <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7df0532310>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7df0532310>>: AssertionError: Bad argument number for Name: 3, expecting 4
+WARNING:tensorflow:Entity <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7df0532310>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7df0532310>>: AssertionError: Bad argument number for Name: 3, expecting 4
+W1208 01:49:42.786243 140184522934080 ag_logging.py:145] Entity <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7df0532310>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7df0532310>>: AssertionError: Bad argument number for Name: 3, expecting 4
+WARNING:tensorflow:Entity <bound method Dense.call of <tensorflow.python.layers.core.Dense object at 0x7f7df0202650>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method Dense.call of <tensorflow.python.layers.core.Dense object at 0x7f7df0202650>>: AssertionError: Bad argument number for Name: 3, expecting 4
+W1208 01:49:42.960409 140184522934080 ag_logging.py:145] Entity <bound method Dense.call of <tensorflow.python.layers.core.Dense object at 0x7f7df0202650>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method Dense.call of <tensorflow.python.layers.core.Dense object at 0x7f7df0202650>>: AssertionError: Bad argument number for Name: 3, expecting 4
+WARNING:tensorflow:Entity <bound method AttentionWrapper.call of <tensorflow.contrib.seq2seq.python.ops.attention_wrapper.AttentionWrapper object at 0x7f7dcc757c50>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method AttentionWrapper.call of <tensorflow.contrib.seq2seq.python.ops.attention_wrapper.AttentionWrapper object at 0x7f7dcc757c50>>: AttributeError: module 'gast' has no attribute 'Num'
+W1208 01:49:43.252707 140184522934080 ag_logging.py:145] Entity <bound method AttentionWrapper.call of <tensorflow.contrib.seq2seq.python.ops.attention_wrapper.AttentionWrapper object at 0x7f7dcc757c50>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method AttentionWrapper.call of <tensorflow.contrib.seq2seq.python.ops.attention_wrapper.AttentionWrapper object at 0x7f7dcc757c50>>: AttributeError: module 'gast' has no attribute 'Num'
+WARNING:tensorflow:Entity <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7df01c3ed0>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7df01c3ed0>>: AssertionError: Bad argument number for Name: 3, expecting 4
+W1208 01:49:43.350427 140184522934080 ag_logging.py:145] Entity <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7df01c3ed0>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7df01c3ed0>>: AssertionError: Bad argument number for Name: 3, expecting 4
+WARNING:tensorflow:Entity <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7df0177dd0>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7df0177dd0>>: AssertionError: Bad argument number for Name: 3, expecting 4
+W1208 01:49:43.496869 140184522934080 ag_logging.py:145] Entity <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7df0177dd0>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method BasicLSTMCell.call of <tensorflow.python.ops.rnn_cell_impl.BasicLSTMCell object at 0x7f7df0177dd0>>: AssertionError: Bad argument number for Name: 3, expecting 4
+WARNING:tensorflow:Entity <bound method Dense.call of <tensorflow.python.layers.core.Dense object at 0x7f7df078dad0>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method Dense.call of <tensorflow.python.layers.core.Dense object at 0x7f7df078dad0>>: AssertionError: Bad argument number for Name: 3, expecting 4
+W1208 01:49:43.627524 140184522934080 ag_logging.py:145] Entity <bound method Dense.call of <tensorflow.python.layers.core.Dense object at 0x7f7df078dad0>> could not be transformed and will be executed as-is. Please report this to the AutgoGraph team. When filing the bug, set the verbosity to 10 (on Linux, `export AUTOGRAPH_VERBOSITY=10`) and attach the full output. Cause: converting <bound method Dense.call of <tensorflow.python.layers.core.Dense object at 0x7f7df078dad0>>: AssertionError: Bad argument number for Name: 3, expecting 4
+WARNING:tensorflow:From /home/jintao/files/nmt/nmt/utils/misc_utils.py:142: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+W1208 01:49:43.976198 140184522934080 deprecation_wrapper.py:119] From /home/jintao/files/nmt/nmt/utils/misc_utils.py:142: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+WARNING:tensorflow:From /home/jintao/files/nmt/nmt/train.py:488: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+W1208 01:49:43.976386 140184522934080 deprecation_wrapper.py:119] From /home/jintao/files/nmt/nmt/train.py:488: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+2019-12-08 01:49:43.977712: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: Tesla M60 major: 5 minor: 2 memoryClockRate(GHz): 1.1775
+pciBusID: 0000:85:00.0
+2019-12-08 01:49:43.977757: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.10.0
+2019-12-08 01:49:43.977768: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcublas.so.10.0
+2019-12-08 01:49:43.977777: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcufft.so.10.0
+2019-12-08 01:49:43.977786: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcurand.so.10.0
+2019-12-08 01:49:43.977795: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusolver.so.10.0
+2019-12-08 01:49:43.977804: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusparse.so.10.0
+2019-12-08 01:49:43.977814: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudnn.so.7
+2019-12-08 01:49:43.979672: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1763] Adding visible gpu devices: 0
+2019-12-08 01:49:43.979698: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-12-08 01:49:43.979705: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 
+2019-12-08 01:49:43.979710: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N 
+2019-12-08 01:49:43.981617: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1326] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 7517 MB memory) -> physical GPU (device: 0, name: Tesla M60, pci bus id: 0000:85:00.0, compute capability: 5.2)
+2019-12-08 01:49:43.982715: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: Tesla M60 major: 5 minor: 2 memoryClockRate(GHz): 1.1775
+pciBusID: 0000:85:00.0
+2019-12-08 01:49:43.982736: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.10.0
+2019-12-08 01:49:43.982747: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcublas.so.10.0
+2019-12-08 01:49:43.982755: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcufft.so.10.0
+2019-12-08 01:49:43.982764: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcurand.so.10.0
+2019-12-08 01:49:43.982772: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusolver.so.10.0
+2019-12-08 01:49:43.982780: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusparse.so.10.0
+2019-12-08 01:49:43.982789: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudnn.so.7
+2019-12-08 01:49:43.984531: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1763] Adding visible gpu devices: 0
+2019-12-08 01:49:43.984546: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-12-08 01:49:43.984553: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 
+2019-12-08 01:49:43.984557: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N 
+2019-12-08 01:49:43.986378: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1326] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 7517 MB memory) -> physical GPU (device: 0, name: Tesla M60, pci bus id: 0000:85:00.0, compute capability: 5.2)
+2019-12-08 01:49:43.987500: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: Tesla M60 major: 5 minor: 2 memoryClockRate(GHz): 1.1775
+pciBusID: 0000:85:00.0
+2019-12-08 01:49:43.987521: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.10.0
+2019-12-08 01:49:43.987531: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcublas.so.10.0
+2019-12-08 01:49:43.987540: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcufft.so.10.0
+2019-12-08 01:49:43.987548: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcurand.so.10.0
+2019-12-08 01:49:43.987557: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusolver.so.10.0
+2019-12-08 01:49:43.987565: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusparse.so.10.0
+2019-12-08 01:49:43.987573: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudnn.so.7
+2019-12-08 01:49:43.989320: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1763] Adding visible gpu devices: 0
+2019-12-08 01:49:43.989337: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-12-08 01:49:43.989344: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 
+2019-12-08 01:49:43.989348: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N 
+2019-12-08 01:49:43.991163: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1326] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 7517 MB memory) -> physical GPU (device: 0, name: Tesla M60, pci bus id: 0000:85:00.0, compute capability: 5.2)
+WARNING:tensorflow:From /home/jintao/files/nmt/nmt/model_helper.py:628: The name tf.global_variables_initializer is deprecated. Please use tf.compat.v1.global_variables_initializer instead.
+
+W1208 01:49:43.991365 140184522934080 deprecation_wrapper.py:119] From /home/jintao/files/nmt/nmt/model_helper.py:628: The name tf.global_variables_initializer is deprecated. Please use tf.compat.v1.global_variables_initializer instead.
+
+2019-12-08 01:49:44.119709: W tensorflow/compiler/jit/mark_for_compilation_pass.cc:1412] (One-time warning): Not using XLA:CPU for cluster because envvar TF_XLA_FLAGS=--tf_xla_cpu_global_jit was not set.  If you want XLA:CPU, either set that envvar, or use experimental_jit_scope to enable XLA:CPU.  To confirm that XLA is active, pass --vmodule=xla_compilation_cache=1 (as a proper command-line flag, not via TF_XLA_FLAGS) or set the envvar XLA_FLAGS=--xla_hlo_profile.
+2019-12-08 01:49:45.719709: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcublas.so.10.0
+2019-12-08 01:49:49.961521: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2019-12-08 01:49:49.961552: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 01:49:49.961552: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+WARNING:tensorflow:From /home/jintao/miniconda3/lib/python3.7/site-packages/tensorflow/python/training/saver.py:1276: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+W1208 01:55:02.240748 140184522934080 deprecation.py:323] From /home/jintao/miniconda3/lib/python3.7/site-packages/tensorflow/python/training/saver.py:1276: checkpoint_exists (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to check for files with this prefix.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-1000
+I1208 01:55:02.241698 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-1000
+2019-12-08 01:55:02.400783: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2019-12-08 01:55:02.400787: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 01:55:02.400822: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-1000
+I1208 01:55:02.467393 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-1000
+2019-12-08 01:55:02.631566: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2019-12-08 01:55:02.631595: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 01:55:02.631697: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-1000
+I1208 01:55:19.100471 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-1000
+2019-12-08 01:55:19.233542: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2019-12-08 01:55:19.233561: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 01:55:19.233594: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-1000
+I1208 01:55:19.359074 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-1000
+2019-12-08 01:55:19.483622: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2019-12-08 01:55:19.483649: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 01:55:19.483662: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-2000
+I1208 02:01:10.297759 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-2000
+2019-12-08 02:01:10.432002: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2019-12-08 02:01:10.432005: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:01:10.432057: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-2000
+I1208 02:01:10.496146 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-2000
+2019-12-08 02:01:10.619837: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2019-12-08 02:01:10.619845: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:01:10.619845: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-2000
+I1208 02:01:40.238486 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-2000
+2019-12-08 02:01:40.372897: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2019-12-08 02:01:40.372969: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:01:40.373039: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-2000
+I1208 02:01:40.478666 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-2000
+2019-12-08 02:01:40.608009: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2019-12-08 02:01:40.608035: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:01:40.608016: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-3000
+I1208 02:07:23.258972 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-3000
+2019-12-08 02:07:23.395883: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2019-12-08 02:07:23.395902: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:07:23.395937: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-3000
+I1208 02:07:23.445631 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-3000
+2019-12-08 02:07:23.569736: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2019-12-08 02:07:23.569751: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:07:23.569748: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-3000
+I1208 02:08:06.542316 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-3000
+2019-12-08 02:08:06.690672: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2019-12-08 02:08:06.690745: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:08:06.690745: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-3000
+I1208 02:08:06.781298 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-3000
+2019-12-08 02:08:06.915220: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:08:06.915224: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2019-12-08 02:08:06.915289: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-4000
+I1208 02:13:32.946151 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-4000
+2019-12-08 02:13:33.082424: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:13:33.082544: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:13:33.082788: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-4000
+I1208 02:13:33.113582 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-4000
+2019-12-08 02:13:33.237216: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:13:33.237216: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2019-12-08 02:13:33.237381: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-4000
+I1208 02:14:29.450160 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-4000
+2019-12-08 02:14:29.587614: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2019-12-08 02:14:29.587625: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:14:29.587614: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-4000
+I1208 02:14:29.674254 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-4000
+2019-12-08 02:14:29.803512: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2019-12-08 02:14:29.803538: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:14:29.803542: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-5000
+I1208 02:19:58.507342 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-5000
+2019-12-08 02:19:58.643666: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2019-12-08 02:19:58.643716: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:19:58.643719: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-5000
+I1208 02:19:58.767532 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-5000
+2019-12-08 02:19:58.893929: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2019-12-08 02:19:58.893934: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:19:58.894063: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-5000
+I1208 02:20:02.571923 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-5000
+2019-12-08 02:20:02.707747: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2019-12-08 02:20:02.707775: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:20:02.707904: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-5000
+I1208 02:20:02.759743 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-5000
+2019-12-08 02:20:02.897199: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:20:02.897287: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:20:02.897501: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-5000
+I1208 02:22:02.951047 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-5000
+2019-12-08 02:22:03.104714: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2019-12-08 02:22:03.104726: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:22:03.104755: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-5000
+I1208 02:22:03.156786 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-5000
+2019-12-08 02:22:03.294053: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2019-12-08 02:22:03.294078: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:22:03.294249: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+WARNING:tensorflow:From /home/jintao/miniconda3/lib/python3.7/site-packages/tensorflow/python/training/saver.py:960: remove_checkpoint (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to delete files with this prefix.
+W1208 02:27:00.686963 140184522934080 deprecation.py:323] From /home/jintao/miniconda3/lib/python3.7/site-packages/tensorflow/python/training/saver.py:960: remove_checkpoint (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to delete files with this prefix.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-6000
+I1208 02:27:00.898550 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-6000
+2019-12-08 02:27:01.034006: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2019-12-08 02:27:01.034019: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:27:01.034138: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-6000
+I1208 02:27:01.082805 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-6000
+2019-12-08 02:27:01.205232: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2019-12-08 02:27:01.205233: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:27:01.215615: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-6000
+I1208 02:28:24.696316 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-6000
+2019-12-08 02:28:24.835388: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2019-12-08 02:28:24.835425: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:28:24.835465: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-6000
+I1208 02:28:24.873337 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-6000
+2019-12-08 02:28:25.002551: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2019-12-08 02:28:25.002568: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:28:25.002661: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-7000
+I1208 02:33:19.798940 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-7000
+2019-12-08 02:33:19.937430: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2019-12-08 02:33:19.937430: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:33:19.937430: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-7000
+I1208 02:33:20.026593 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-7000
+2019-12-08 02:33:20.152696: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2019-12-08 02:33:20.152738: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:33:20.152801: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-7000
+I1208 02:34:57.435889 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-7000
+2019-12-08 02:34:57.578173: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2019-12-08 02:34:57.578238: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:34:57.578320: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-7000
+I1208 02:34:57.659271 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-7000
+2019-12-08 02:34:57.792062: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:34:57.792062: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:34:57.792168: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-8000
+I1208 02:39:35.027352 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-8000
+2019-12-08 02:39:35.162808: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:39:35.162828: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:39:35.162828: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-8000
+I1208 02:39:35.250936 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-8000
+2019-12-08 02:39:35.392892: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:39:35.392893: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2019-12-08 02:39:35.392942: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-8000
+I1208 02:41:25.489946 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-8000
+2019-12-08 02:41:25.630245: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:41:25.630269: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2019-12-08 02:41:25.630397: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-8000
+I1208 02:41:25.662540 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-8000
+2019-12-08 02:41:25.792750: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:41:25.792803: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2019-12-08 02:41:25.792816: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-9000
+I1208 02:45:44.770048 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-9000
+2019-12-08 02:45:44.910219: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:45:44.910236: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:45:44.910222: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-9000
+I1208 02:45:45.019036 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-9000
+2019-12-08 02:45:45.161453: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:45:45.161453: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:45:45.161506: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-9000
+I1208 02:47:48.075690 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-9000
+2019-12-08 02:47:48.222793: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2019-12-08 02:47:48.222818: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:47:48.222853: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-9000
+I1208 02:47:48.366156 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-9000
+2019-12-08 02:47:48.499536: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2019-12-08 02:47:48.499553: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:47:48.499570: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-10000
+I1208 02:52:01.394168 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-10000
+2019-12-08 02:52:01.530515: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:52:01.530539: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:52:01.530615: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-10000
+I1208 02:52:01.600778 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-10000
+2019-12-08 02:52:01.726311: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2019-12-08 02:52:01.726321: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:52:01.726346: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-10000
+I1208 02:52:05.407576 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-10000
+2019-12-08 02:52:05.542475: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2019-12-08 02:52:05.542525: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:52:05.542526: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-10000
+I1208 02:52:05.604592 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-10000
+2019-12-08 02:52:05.743085: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2019-12-08 02:52:05.743107: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:52:05.743110: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-10000
+I1208 02:55:14.896528 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-10000
+2019-12-08 02:55:15.041824: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2019-12-08 02:55:15.041847: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:55:15.041837: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-10000
+I1208 02:55:15.079701 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-10000
+2019-12-08 02:55:15.215398: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2019-12-08 02:55:15.215409: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:55:15.215411: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-11000
+I1208 02:59:09.271508 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-11000
+2019-12-08 02:59:09.408731: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:59:09.408757: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2019-12-08 02:59:09.408807: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-11000
+I1208 02:59:09.462537 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-11000
+2019-12-08 02:59:09.587351: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:59:09.587358: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 02:59:09.587351: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-11000
+I1208 03:01:39.476346 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-11000
+2019-12-08 03:01:39.617868: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2019-12-08 03:01:39.617892: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 03:01:39.617930: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-11000
+I1208 03:01:39.682467 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-11000
+2019-12-08 03:01:39.813693: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2019-12-08 03:01:39.813735: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 03:01:39.813785: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-12000
+I1208 03:05:21.157519 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-12000
+2019-12-08 03:05:21.298289: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2019-12-08 03:05:21.298302: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 03:05:21.298500: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-12000
+I1208 03:05:21.421821 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-12000
+2019-12-08 03:05:21.549065: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2019-12-08 03:05:21.549083: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 03:05:21.549125: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-12000
+I1208 03:05:25.111543 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-12000
+2019-12-08 03:05:25.250539: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 03:05:25.250539: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 03:05:25.250539: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-12000
+I1208 03:05:25.298779 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-12000
+2019-12-08 03:05:25.427477: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2019-12-08 03:05:25.427539: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 03:05:25.427551: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/translate.ckpt-12000
+I1208 03:05:28.523111 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/translate.ckpt-12000
+2019-12-08 03:05:28.661054: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2019-12-08 03:05:28.661080: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 03:05:28.661081: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/best_bleu/translate.ckpt-12000
+I1208 03:06:24.262252 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/best_bleu/translate.ckpt-12000
+2019-12-08 03:06:24.402511: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2019-12-08 03:06:24.402532: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 03:06:24.402548: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/best_bleu/translate.ckpt-12000
+I1208 03:06:24.497391 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/best_bleu/translate.ckpt-12000
+2019-12-08 03:06:24.624988: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 03:06:24.624988: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2019-12-08 03:06:24.624988: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+INFO:tensorflow:Restoring parameters from ~/nmt_model/three/best_bleu/translate.ckpt-12000
+I1208 03:06:27.741847 140184522934080 saver.py:1280] Restoring parameters from ~/nmt_model/three/best_bleu/translate.ckpt-12000
+2019-12-08 03:06:27.876811: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.vi is already initialized.
+2019-12-08 03:06:27.876823: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.
+2019-12-08 03:06:27.876855: I tensorflow/core/kernels/lookup_util.cc:376] Table trying to initialize from file /tmp/nmt_data/vocab.en is already initialized.

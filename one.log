@@ -1,0 +1,696 @@
+# Job id 0
+# Devices visible to TensorFlow: [_DeviceAttributes(/job:localhost/replica:0/task:0/device:CPU:0, CPU, 268435456, 6569721904545337992), _DeviceAttributes(/job:localhost/replica:0/task:0/device:XLA_CPU:0, XLA_CPU, 17179869184, 1761935412181646688), _DeviceAttributes(/job:localhost/replica:0/task:0/device:GPU:0, GPU, 7813031527, 3457323665630797464), _DeviceAttributes(/job:localhost/replica:0/task:0/device:XLA_GPU:0, XLA_GPU, 17179869184, 9173452504848709010)]
+# Loading hparams from ~/nmt_model/one/hparams
+# Loading standard hparams from hparams/one.json
+# Vocab file /tmp/nmt_data/vocab.vi exists
+# Vocab file /tmp/nmt_data/vocab.en exists
+  saving hparams to ~/nmt_model/one/hparams
+  saving hparams to ~/nmt_model/one/best_bleu/hparams
+  attention=scaled_luong
+  attention_architecture=standard
+  avg_ckpts=False
+  batch_size=128
+  beam_width=10
+  best_bleu=0
+  best_bleu_dir=~/nmt_model/one/best_bleu
+  check_special_token=True
+  colocate_gradients_with_ops=True
+  coverage_penalty_weight=0.0
+  decay_scheme=luong234
+  dev_prefix=/tmp/nmt_data/tst2012
+  dropout=0.2
+  embed_prefix=None
+  encoder_type=bi
+  eos=</s>
+  epoch_step=0
+  forget_bias=1.0
+  infer_batch_size=32
+  infer_mode=beam_search
+  init_op=uniform
+  init_weight=0.1
+  language_model=False
+  learning_rate=1.0
+  length_penalty_weight=0.0
+  log_device_placement=False
+  max_gradient_norm=5.0
+  max_train=0
+  metrics=['bleu']
+  num_buckets=5
+  num_dec_emb_partitions=0
+  num_decoder_layers=4
+  num_decoder_residual_layers=0
+  num_embeddings_partitions=0
+  num_enc_emb_partitions=0
+  num_encoder_layers=4
+  num_encoder_residual_layers=0
+  num_gpus=1
+  num_inter_threads=0
+  num_intra_threads=0
+  num_keep_ckpts=5
+  num_sampled_softmax=0
+  num_train_steps=12000
+  num_translations_per_input=1
+  num_units=1024
+  optimizer=sgd
+  out_dir=~/nmt_model/one
+  output_attention=True
+  override_loaded_hparams=False
+  pass_hidden_state=True
+  random_seed=None
+  residual=False
+  sampling_temperature=0.0
+  share_vocab=False
+  sos=<s>
+  src=vi
+  src_embed_file=
+  src_max_len=50
+  src_max_len_infer=None
+  src_vocab_file=/tmp/nmt_data/vocab.vi
+  src_vocab_size=7709
+  steps_per_external_eval=None
+  steps_per_stats=100
+  subword_option=
+  test_prefix=/tmp/nmt_data/tst2013
+  tgt=en
+  tgt_embed_file=
+  tgt_max_len=50
+  tgt_max_len_infer=None
+  tgt_vocab_file=/tmp/nmt_data/vocab.en
+  tgt_vocab_size=17191
+  time_major=True
+  train_prefix=/tmp/nmt_data/train
+  unit_type=lstm
+  use_char_encode=False
+  vocab_prefix=/tmp/nmt_data/vocab
+  warmup_scheme=t2t
+  warmup_steps=0
+# Creating train graph ...
+# Build a basic encoder
+  num_bi_layers = 2, num_bi_residual_layers=0
+  cell 0  LSTM, forget_bias=1  DropoutWrapper, dropout=0.2   DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DropoutWrapper, dropout=0.2   DeviceWrapper, device=/gpu:0
+  cell 0  LSTM, forget_bias=1  DropoutWrapper, dropout=0.2   DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DropoutWrapper, dropout=0.2   DeviceWrapper, device=/gpu:0
+  cell 0  LSTM, forget_bias=1  DropoutWrapper, dropout=0.2   DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DropoutWrapper, dropout=0.2   DeviceWrapper, device=/gpu:0
+  cell 2  LSTM, forget_bias=1  DropoutWrapper, dropout=0.2   DeviceWrapper, device=/gpu:0
+  cell 3  LSTM, forget_bias=1  DropoutWrapper, dropout=0.2   DeviceWrapper, device=/gpu:0
+  learning_rate=1, warmup_steps=0, warmup_scheme=t2t
+  decay_scheme=luong234, start_decay_step=8000, decay_steps 1000, decay_factor 0.5
+# Trainable variables
+Format: <name>, <shape>, <(soft) device placement>
+  embeddings/encoder/embedding_encoder:0, (7709, 1024), /device:GPU:0
+  embeddings/decoder/embedding_decoder:0, (17191, 1024), /device:GPU:0
+  dynamic_seq2seq/encoder/bidirectional_rnn/fw/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (2048, 4096), /device:GPU:0
+  dynamic_seq2seq/encoder/bidirectional_rnn/fw/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (4096,), /device:GPU:0
+  dynamic_seq2seq/encoder/bidirectional_rnn/fw/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (2048, 4096), /device:GPU:0
+  dynamic_seq2seq/encoder/bidirectional_rnn/fw/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (4096,), /device:GPU:0
+  dynamic_seq2seq/encoder/bidirectional_rnn/bw/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (2048, 4096), /device:GPU:0
+  dynamic_seq2seq/encoder/bidirectional_rnn/bw/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (4096,), /device:GPU:0
+  dynamic_seq2seq/encoder/bidirectional_rnn/bw/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (2048, 4096), /device:GPU:0
+  dynamic_seq2seq/encoder/bidirectional_rnn/bw/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (4096,), /device:GPU:0
+  dynamic_seq2seq/decoder/memory_layer/kernel:0, (2048, 1024), 
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (3072, 4096), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (4096,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (2048, 4096), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (4096,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_2/basic_lstm_cell/kernel:0, (2048, 4096), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_2/basic_lstm_cell/bias:0, (4096,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_3/basic_lstm_cell/kernel:0, (2048, 4096), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_3/basic_lstm_cell/bias:0, (4096,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/luong_attention/attention_g:0, (), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/attention_layer/kernel:0, (3072, 1024), /device:GPU:0
+  dynamic_seq2seq/decoder/output_projection/kernel:0, (1024, 17191), /device:GPU:0
+# Creating eval graph ...
+# Build a basic encoder
+  num_bi_layers = 2, num_bi_residual_layers=0
+  cell 0  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 0  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 0  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 2  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 3  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+# Trainable variables
+Format: <name>, <shape>, <(soft) device placement>
+  embeddings/encoder/embedding_encoder:0, (7709, 1024), /device:GPU:0
+  embeddings/decoder/embedding_decoder:0, (17191, 1024), /device:GPU:0
+  dynamic_seq2seq/encoder/bidirectional_rnn/fw/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (2048, 4096), /device:GPU:0
+  dynamic_seq2seq/encoder/bidirectional_rnn/fw/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (4096,), /device:GPU:0
+  dynamic_seq2seq/encoder/bidirectional_rnn/fw/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (2048, 4096), /device:GPU:0
+  dynamic_seq2seq/encoder/bidirectional_rnn/fw/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (4096,), /device:GPU:0
+  dynamic_seq2seq/encoder/bidirectional_rnn/bw/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (2048, 4096), /device:GPU:0
+  dynamic_seq2seq/encoder/bidirectional_rnn/bw/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (4096,), /device:GPU:0
+  dynamic_seq2seq/encoder/bidirectional_rnn/bw/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (2048, 4096), /device:GPU:0
+  dynamic_seq2seq/encoder/bidirectional_rnn/bw/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (4096,), /device:GPU:0
+  dynamic_seq2seq/decoder/memory_layer/kernel:0, (2048, 1024), 
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (3072, 4096), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (4096,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (2048, 4096), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (4096,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_2/basic_lstm_cell/kernel:0, (2048, 4096), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_2/basic_lstm_cell/bias:0, (4096,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_3/basic_lstm_cell/kernel:0, (2048, 4096), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_3/basic_lstm_cell/bias:0, (4096,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/luong_attention/attention_g:0, (), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/attention_layer/kernel:0, (3072, 1024), /device:GPU:0
+  dynamic_seq2seq/decoder/output_projection/kernel:0, (1024, 17191), /device:GPU:0
+# Creating infer graph ...
+# Build a basic encoder
+  num_bi_layers = 2, num_bi_residual_layers=0
+  cell 0  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 0  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 0  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 1  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 2  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  cell 3  LSTM, forget_bias=1  DeviceWrapper, device=/gpu:0
+  decoder: infer_mode=beam_searchbeam_width=10, length_penalty=0.000000, coverage_penalty=0.000000
+# Trainable variables
+Format: <name>, <shape>, <(soft) device placement>
+  embeddings/encoder/embedding_encoder:0, (7709, 1024), /device:GPU:0
+  embeddings/decoder/embedding_decoder:0, (17191, 1024), /device:GPU:0
+  dynamic_seq2seq/encoder/bidirectional_rnn/fw/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (2048, 4096), /device:GPU:0
+  dynamic_seq2seq/encoder/bidirectional_rnn/fw/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (4096,), /device:GPU:0
+  dynamic_seq2seq/encoder/bidirectional_rnn/fw/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (2048, 4096), /device:GPU:0
+  dynamic_seq2seq/encoder/bidirectional_rnn/fw/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (4096,), /device:GPU:0
+  dynamic_seq2seq/encoder/bidirectional_rnn/bw/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (2048, 4096), /device:GPU:0
+  dynamic_seq2seq/encoder/bidirectional_rnn/bw/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (4096,), /device:GPU:0
+  dynamic_seq2seq/encoder/bidirectional_rnn/bw/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (2048, 4096), /device:GPU:0
+  dynamic_seq2seq/encoder/bidirectional_rnn/bw/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (4096,), /device:GPU:0
+  dynamic_seq2seq/decoder/memory_layer/kernel:0, (2048, 1024), 
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_0/basic_lstm_cell/kernel:0, (3072, 4096), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_0/basic_lstm_cell/bias:0, (4096,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_1/basic_lstm_cell/kernel:0, (2048, 4096), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_1/basic_lstm_cell/bias:0, (4096,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_2/basic_lstm_cell/kernel:0, (2048, 4096), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_2/basic_lstm_cell/bias:0, (4096,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_3/basic_lstm_cell/kernel:0, (2048, 4096), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/multi_rnn_cell/cell_3/basic_lstm_cell/bias:0, (4096,), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/luong_attention/attention_g:0, (), /device:GPU:0
+  dynamic_seq2seq/decoder/attention/attention_layer/kernel:0, (3072, 1024), /device:GPU:0
+  dynamic_seq2seq/decoder/output_projection/kernel:0, (1024, 17191), 
+# log_file=~/nmt_model/one/log_1575720953
+  created train model with fresh parameters, time 3.69s
+  created infer model with fresh parameters, time 0.21s
+  # 72
+    src: Bức xếp hình cần một mảnh nữa .
+    ref: There had to be another piece of the jigsaw .
+    nmt: objectives path carrots stepped stepped handing iteration and and and and and unstoppable unstoppable unstoppable unstoppable
+  created eval model with fresh parameters, time 0.17s
+  eval dev: perplexity 53623.31, time 4s, Sat Dec  7 20:16:04 2019.
+  eval test: perplexity 60608.73, time 4s, Sat Dec  7 20:16:08 2019.
+  created infer model with fresh parameters, time 0.23s
+# Start step 0, lr 1, Sat Dec  7 20:16:09 2019
+# Init train iterator, skipping 0 elements
+  step 100 lr 1 step-time 1.16s wps 4.94K ppl 141013785.49 gN 1032.87 bleu 0.00, Sat Dec  7 20:18:04 2019
+  step 200 lr 1 step-time 1.08s wps 5.18K ppl 29264.33 gN 76.27 bleu 0.00, Sat Dec  7 20:19:52 2019
+  step 300 lr 1 step-time 1.08s wps 5.17K ppl 38678.44 gN 80.76 bleu 0.00, Sat Dec  7 20:21:40 2019
+  step 400 lr 1 step-time 1.09s wps 5.17K ppl 62738.40 gN 159.01 bleu 0.00, Sat Dec  7 20:23:29 2019
+  step 500 lr 1 step-time 1.08s wps 5.18K ppl 7920.64 gN 48.50 bleu 0.00, Sat Dec  7 20:25:17 2019
+  step 600 lr 1 step-time 1.08s wps 5.16K ppl 12333.73 gN 62.77 bleu 0.00, Sat Dec  7 20:27:05 2019
+  step 700 lr 1 step-time 1.10s wps 5.16K ppl 7079.30 gN 52.66 bleu 0.00, Sat Dec  7 20:28:55 2019
+  step 800 lr 1 step-time 1.09s wps 5.17K ppl 13693.58 gN 61.44 bleu 0.00, Sat Dec  7 20:30:45 2019
+  step 900 lr 1 step-time 1.08s wps 5.17K ppl 9218.22 gN 62.73 bleu 0.00, Sat Dec  7 20:32:33 2019
+  step 1000 lr 1 step-time 1.07s wps 5.15K ppl 7912.84 gN 67.58 bleu 0.00, Sat Dec  7 20:34:20 2019
+# Save eval, global step 1000
+  loaded infer model parameters from ~/nmt_model/one/translate.ckpt-1000, time 0.34s
+  # 839
+    src: Điều họ cần là một văn hoá y học cần xác định lại .
+    ref: What they need is a redefined medical culture .
+    nmt: And of of of of of of of of of of of of of of of of of of of of of of of of of of of
+  loaded eval model parameters from ~/nmt_model/one/translate.ckpt-1000, time 0.32s
+  eval dev: perplexity 1082.92, time 4s, Sat Dec  7 20:34:27 2019.
+  eval test: perplexity 1161.96, time 4s, Sat Dec  7 20:34:31 2019.
+# Finished an epoch, step 1043. Perform external evaluation
+  loaded infer model parameters from ~/nmt_model/one/translate.ckpt-1000, time 0.41s
+  # 632
+    src: Động cơ , sang số- Có 4 lựa chọn
+    ref: Engines , gearshift -- four choices .
+    nmt: And &apos;s of of of of of of of of of of of of of of of of
+  loaded infer model parameters from ~/nmt_model/one/translate.ckpt-1000, time 0.50s
+# External evaluation, global step 1000
+  decoding to output ~/nmt_model/one/output_dev
+  done, num sentences 1553, num translations per input 1, time 121s, Sat Dec  7 20:37:21 2019.
+  bleu dev: 0.0
+  saving hparams to ~/nmt_model/one/hparams
+# External evaluation, global step 1000
+  decoding to output ~/nmt_model/one/output_test
+  done, num sentences 1268, num translations per input 1, time 116s, Sat Dec  7 20:39:19 2019.
+  bleu test: 0.0
+  saving hparams to ~/nmt_model/one/hparams
+  step 1100 lr 1 step-time 1.09s wps 5.10K ppl 6159.50 gN 71.60 bleu 0.00, Sat Dec  7 20:40:22 2019
+  step 1200 lr 1 step-time 1.06s wps 5.19K ppl 4596.41 gN 62.88 bleu 0.00, Sat Dec  7 20:42:08 2019
+  step 1300 lr 1 step-time 1.08s wps 5.21K ppl 7272.82 gN 75.64 bleu 0.00, Sat Dec  7 20:43:56 2019
+  step 1400 lr 1 step-time 1.08s wps 5.20K ppl 2243.28 gN 44.90 bleu 0.00, Sat Dec  7 20:45:45 2019
+  step 1500 lr 1 step-time 1.07s wps 5.15K ppl 2296.77 gN 43.23 bleu 0.00, Sat Dec  7 20:47:32 2019
+  step 1600 lr 1 step-time 1.09s wps 5.21K ppl 2182.86 gN 50.23 bleu 0.00, Sat Dec  7 20:49:22 2019
+  step 1700 lr 1 step-time 1.08s wps 5.18K ppl 1601.39 gN 39.48 bleu 0.00, Sat Dec  7 20:51:10 2019
+  step 1800 lr 1 step-time 1.08s wps 5.18K ppl 1180.92 gN 35.19 bleu 0.00, Sat Dec  7 20:52:58 2019
+  step 1900 lr 1 step-time 1.09s wps 5.19K ppl 825.28 gN 22.21 bleu 0.00, Sat Dec  7 20:54:47 2019
+  step 2000 lr 1 step-time 1.09s wps 5.18K ppl 575.41 gN 16.06 bleu 0.00, Sat Dec  7 20:56:36 2019
+# Save eval, global step 2000
+  loaded infer model parameters from ~/nmt_model/one/translate.ckpt-2000, time 0.34s
+  # 942
+    src: Chúng tôi trò chuyện là thời cuộc chẳng có gì thay đổi từ thời có bản sử thi Ấn Độ cổ đại Mahabharata .
+    ref: And we were in conversation about how nothing had changed since the time of the ancient Indian epic &quot; The Mahabharata . &quot;
+    nmt: We , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , ,
+  loaded eval model parameters from ~/nmt_model/one/translate.ckpt-2000, time 0.31s
+  eval dev: perplexity 10298.30, time 4s, Sat Dec  7 20:56:42 2019.
+  eval test: perplexity 11683.70, time 4s, Sat Dec  7 20:56:46 2019.
+# Finished an epoch, step 2086. Perform external evaluation
+  loaded infer model parameters from ~/nmt_model/one/translate.ckpt-2000, time 0.32s
+  # 1276
+    src: Nếu gọi trung tâm quản lý động vật , điều đó sẽ tiêu tốn nhiều tiền bạc hơn .
+    ref: We call animal control , it just costs a lot of money .
+    nmt: If , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , ,
+  loaded infer model parameters from ~/nmt_model/one/translate.ckpt-2000, time 0.29s
+# External evaluation, global step 2000
+  decoding to output ~/nmt_model/one/output_dev
+  done, num sentences 1553, num translations per input 1, time 121s, Sat Dec  7 21:00:22 2019.
+  bleu dev: 0.0
+  saving hparams to ~/nmt_model/one/hparams
+# External evaluation, global step 2000
+  decoding to output ~/nmt_model/one/output_test
+  done, num sentences 1268, num translations per input 1, time 118s, Sat Dec  7 21:02:20 2019.
+  bleu test: 0.0
+  saving hparams to ~/nmt_model/one/hparams
+  step 2100 lr 1 step-time 1.09s wps 5.04K ppl 433.28 gN 35.38 bleu 0.00, Sat Dec  7 21:02:37 2019
+  step 2200 lr 1 step-time 1.07s wps 5.15K ppl 317.40 gN 6.02 bleu 0.00, Sat Dec  7 21:04:24 2019
+  step 2300 lr 1 step-time 1.09s wps 5.17K ppl 284.79 gN 6.00 bleu 0.00, Sat Dec  7 21:06:13 2019
+  step 2400 lr 1 step-time 1.08s wps 5.17K ppl 257.27 gN 5.72 bleu 0.00, Sat Dec  7 21:08:02 2019
+  step 2500 lr 1 step-time 1.08s wps 5.16K ppl 218.37 gN 7.22 bleu 0.00, Sat Dec  7 21:09:50 2019
+  step 2600 lr 1 step-time 1.09s wps 5.18K ppl 203.03 gN 5.69 bleu 0.00, Sat Dec  7 21:11:39 2019
+  step 2700 lr 1 step-time 1.09s wps 5.19K ppl 183.58 gN 5.68 bleu 0.00, Sat Dec  7 21:13:28 2019
+  step 2800 lr 1 step-time 1.11s wps 5.17K ppl 166.34 gN 5.69 bleu 0.00, Sat Dec  7 21:15:19 2019
+  step 2900 lr 1 step-time 1.08s wps 5.18K ppl 149.62 gN 5.53 bleu 0.00, Sat Dec  7 21:17:07 2019
+  step 3000 lr 1 step-time 1.09s wps 5.18K ppl 140.06 gN 5.77 bleu 0.00, Sat Dec  7 21:18:56 2019
+# Save eval, global step 3000
+  loaded infer model parameters from ~/nmt_model/one/translate.ckpt-3000, time 0.38s
+  # 436
+    src: Đầm phá được bao quanh bởi cây cọ bạn có thể thấy , một vài cây đước .
+    ref: And the lagoon was surrounded by palm trees , as you can see , and a few mangrove .
+    nmt: <unk> <unk> . They &apos;ve got in .
+  loaded eval model parameters from ~/nmt_model/one/translate.ckpt-3000, time 0.33s
+  eval dev: perplexity 104.91, time 4s, Sat Dec  7 21:19:02 2019.
+  eval test: perplexity 125.04, time 4s, Sat Dec  7 21:19:06 2019.
+  step 3100 lr 1 step-time 1.09s wps 5.17K ppl 131.34 gN 6.76 bleu 0.00, Sat Dec  7 21:20:55 2019
+# Finished an epoch, step 3129. Perform external evaluation
+  loaded infer model parameters from ~/nmt_model/one/translate.ckpt-3000, time 0.37s
+  # 165
+    src: &quot; nó là đứa con gái bé bỏng của bà , con hãy hứa rằng sẽ luôn chăm sóc mẹ con nhé &quot;
+    ref: She said , &quot; That &apos;s my baby girl , and you have to promise me now you &apos;ll always take care of her . &quot;
+    nmt: &quot; It &apos;s called . &quot; &quot; &quot; &quot; &quot; &quot; <unk> . &quot;
+  loaded infer model parameters from ~/nmt_model/one/translate.ckpt-3000, time 0.33s
+# External evaluation, global step 3000
+  decoding to output ~/nmt_model/one/output_dev
+  done, num sentences 1553, num translations per input 1, time 81s, Sat Dec  7 21:22:48 2019.
+  bleu dev: 2.9
+  saving hparams to ~/nmt_model/one/hparams
+# External evaluation, global step 3000
+  decoding to output ~/nmt_model/one/output_test
+  done, num sentences 1268, num translations per input 1, time 62s, Sat Dec  7 21:23:53 2019.
+  bleu test: 2.3
+  saving hparams to ~/nmt_model/one/hparams
+  step 3200 lr 1 step-time 1.07s wps 5.08K ppl 118.26 gN 7.86 bleu 2.94, Sat Dec  7 21:25:09 2019
+  step 3300 lr 1 step-time 1.08s wps 5.20K ppl 108.00 gN 7.79 bleu 2.94, Sat Dec  7 21:26:57 2019
+  step 3400 lr 1 step-time 1.08s wps 5.21K ppl 92.94 gN 8.07 bleu 2.94, Sat Dec  7 21:28:45 2019
+  step 3500 lr 1 step-time 1.08s wps 5.19K ppl 80.48 gN 7.44 bleu 2.94, Sat Dec  7 21:30:33 2019
+  step 3600 lr 1 step-time 1.09s wps 5.19K ppl 69.29 gN 7.28 bleu 2.94, Sat Dec  7 21:32:21 2019
+  step 3700 lr 1 step-time 1.08s wps 5.18K ppl 62.28 gN 6.81 bleu 2.94, Sat Dec  7 21:34:09 2019
+  step 3800 lr 1 step-time 1.09s wps 5.16K ppl 54.05 gN 6.87 bleu 2.94, Sat Dec  7 21:35:59 2019
+  step 3900 lr 1 step-time 1.10s wps 5.16K ppl 49.42 gN 6.45 bleu 2.94, Sat Dec  7 21:37:49 2019
+  step 4000 lr 1 step-time 1.08s wps 5.17K ppl 45.71 gN 6.67 bleu 2.94, Sat Dec  7 21:39:37 2019
+# Save eval, global step 4000
+  loaded infer model parameters from ~/nmt_model/one/translate.ckpt-4000, time 0.38s
+  # 827
+    src: Bây giờ cùng bệnh nhân bị đau ngực ấy , giả dụ anh ta ướt mồ hồi và nói lắm và thêm tí mùi cồn vào hơi thở của anh ta , và đột nhiên tiền sử bệnh của tôi bị ảnh hưởng xấu
+    ref: Now take the same patient with chest pain , make them moist and garrulous and put a little bit of alcohol on their breath , and suddenly my history is laced with contempt .
+    nmt: Now the whole time is that he said , for him , he said , he said , he said , and it &apos;s going to be my life , and of course , and of course , and it &apos;s my life ,
+  loaded eval model parameters from ~/nmt_model/one/translate.ckpt-4000, time 0.32s
+  eval dev: perplexity 40.20, time 4s, Sat Dec  7 21:39:43 2019.
+  eval test: perplexity 42.94, time 4s, Sat Dec  7 21:39:47 2019.
+  step 4100 lr 1 step-time 1.08s wps 5.15K ppl 41.77 gN 6.63 bleu 2.94, Sat Dec  7 21:41:36 2019
+# Finished an epoch, step 4172. Perform external evaluation
+  loaded infer model parameters from ~/nmt_model/one/translate.ckpt-4000, time 0.35s
+  # 1157
+    src: Kết thúc quá trình , tôi sẽ có chương trình chắc chắn hoàn hảo với việc sắp xếp con số .
+    ref: At the end of that , I end up with programs that are absolutely perfect at sorting numbers .
+    nmt: The same thing , I &apos;m going to have a sense of life , and I &apos;m going to have it .
+  loaded infer model parameters from ~/nmt_model/one/translate.ckpt-4000, time 0.32s
+# External evaluation, global step 4000
+  decoding to output ~/nmt_model/one/output_dev
+  done, num sentences 1553, num translations per input 1, time 65s, Sat Dec  7 21:44:00 2019.
+  bleu dev: 9.7
+  saving hparams to ~/nmt_model/one/hparams
+# External evaluation, global step 4000
+  decoding to output ~/nmt_model/one/output_test
+  done, num sentences 1268, num translations per input 1, time 60s, Sat Dec  7 21:45:01 2019.
+  bleu test: 9.5
+  saving hparams to ~/nmt_model/one/hparams
+  step 4200 lr 1 step-time 1.08s wps 5.10K ppl 38.51 gN 7.04 bleu 9.73, Sat Dec  7 21:45:31 2019
+  step 4300 lr 1 step-time 1.08s wps 5.17K ppl 34.29 gN 6.50 bleu 9.73, Sat Dec  7 21:47:20 2019
+  step 4400 lr 1 step-time 1.07s wps 5.15K ppl 31.35 gN 6.49 bleu 9.73, Sat Dec  7 21:49:07 2019
+  step 4500 lr 1 step-time 1.10s wps 5.21K ppl 30.91 gN 6.81 bleu 9.73, Sat Dec  7 21:50:57 2019
+  step 4600 lr 1 step-time 1.08s wps 5.21K ppl 29.84 gN 6.74 bleu 9.73, Sat Dec  7 21:52:45 2019
+  step 4700 lr 1 step-time 1.09s wps 5.20K ppl 28.49 gN 6.66 bleu 9.73, Sat Dec  7 21:54:34 2019
+  step 4800 lr 1 step-time 1.07s wps 5.16K ppl 26.20 gN 6.52 bleu 9.73, Sat Dec  7 21:56:21 2019
+  step 4900 lr 1 step-time 1.10s wps 5.18K ppl 25.55 gN 6.75 bleu 9.73, Sat Dec  7 21:58:11 2019
+  step 5000 lr 1 step-time 1.08s wps 5.15K ppl 24.11 gN 6.49 bleu 9.73, Sat Dec  7 21:59:59 2019
+# Save eval, global step 5000
+  loaded infer model parameters from ~/nmt_model/one/translate.ckpt-5000, time 0.36s
+  # 816
+    src: Trong chừng 20 năm tôi viết báo và làm tuyền thông về y học , tôi đã tự nghiên cứu sơ suất và sai lầm trong y học để học mọi điều có thể , từ một trong những bài đầu tiên tôi viết cho tờ Toronto Star tới chương trình truyền hình của tôi &quot; Áo Blu Trắng , Nghệ Thuật Đen . &quot;
+    ref: In my 20 years or so of medical broadcasting and journalism , I &apos;ve made a personal study of medical malpractice and medical errors to learn everything I can , from one of the first articles I wrote for the Toronto Star to my show &quot; White Coat , Black Art . &quot;
+    nmt: In the last 20 years I was writing to write and make a lot of medicine , and I was working out of the <unk> , and I was <unk> to learn , from one of the first things that I was in to learn , from one of the first things I was in the <unk> , and I was going to be
+  loaded eval model parameters from ~/nmt_model/one/translate.ckpt-5000, time 0.34s
+  eval dev: perplexity 22.06, time 4s, Sat Dec  7 22:00:06 2019.
+  eval test: perplexity 22.10, time 4s, Sat Dec  7 22:00:10 2019.
+  loaded infer model parameters from ~/nmt_model/one/translate.ckpt-5000, time 0.31s
+  # 1086
+    src: Và vì vậy , quá trình tiếp theo rất thú vị trong sự sống mất khoảng 1 tỉ năm nữa .
+    ref: And so the next stage that &apos;s interesting in life took about another billion years .
+    nmt: And so the next process is so interesting in the life of a billion billion years .
+  loaded infer model parameters from ~/nmt_model/one/translate.ckpt-5000, time 0.31s
+# External evaluation, global step 5000
+  decoding to output ~/nmt_model/one/output_dev
+  done, num sentences 1553, num translations per input 1, time 79s, Sat Dec  7 22:01:32 2019.
+  bleu dev: 11.4
+  saving hparams to ~/nmt_model/one/hparams
+# External evaluation, global step 5000
+  decoding to output ~/nmt_model/one/output_test
+  done, num sentences 1268, num translations per input 1, time 74s, Sat Dec  7 22:02:47 2019.
+  bleu test: 11.4
+  saving hparams to ~/nmt_model/one/hparams
+  step 5100 lr 1 step-time 1.09s wps 5.12K ppl 23.50 gN 6.58 bleu 11.39, Sat Dec  7 22:04:37 2019
+  step 5200 lr 1 step-time 1.10s wps 5.19K ppl 23.37 gN 6.75 bleu 11.39, Sat Dec  7 22:06:27 2019
+# Finished an epoch, step 5215. Perform external evaluation
+  loaded infer model parameters from ~/nmt_model/one/translate.ckpt-5000, time 0.34s
+  # 1124
+    src: Và những quá trình tiếp theo , như điện , dường như chỉ mất có một vài thập kỷ .
+    ref: And these next steps , like electronics , seem to be taking only a few decades .
+    nmt: And the next process , like <unk> , seems to just take a few decades .
+  loaded infer model parameters from ~/nmt_model/one/translate.ckpt-5000, time 0.31s
+# External evaluation, global step 5000
+  decoding to output ~/nmt_model/one/output_dev
+  done, num sentences 1553, num translations per input 1, time 78s, Sat Dec  7 22:08:02 2019.
+  bleu dev: 11.4
+  saving hparams to ~/nmt_model/one/hparams
+# External evaluation, global step 5000
+  decoding to output ~/nmt_model/one/output_test
+  done, num sentences 1268, num translations per input 1, time 70s, Sat Dec  7 22:09:14 2019.
+  bleu test: 11.4
+  saving hparams to ~/nmt_model/one/hparams
+  step 5300 lr 1 step-time 1.07s wps 5.10K ppl 19.61 gN 7.07 bleu 11.39, Sat Dec  7 22:10:45 2019
+  step 5400 lr 1 step-time 1.07s wps 5.19K ppl 19.34 gN 6.67 bleu 11.39, Sat Dec  7 22:12:32 2019
+  step 5500 lr 1 step-time 1.09s wps 5.20K ppl 19.02 gN 6.96 bleu 11.39, Sat Dec  7 22:14:21 2019
+  step 5600 lr 1 step-time 1.09s wps 5.19K ppl 18.86 gN 6.83 bleu 11.39, Sat Dec  7 22:16:10 2019
+  step 5700 lr 1 step-time 1.09s wps 5.17K ppl 18.21 gN 6.58 bleu 11.39, Sat Dec  7 22:18:00 2019
+  step 5800 lr 1 step-time 1.08s wps 5.14K ppl 17.80 gN 6.56 bleu 11.39, Sat Dec  7 22:19:47 2019
+  step 5900 lr 1 step-time 1.10s wps 5.18K ppl 17.37 gN 6.81 bleu 11.39, Sat Dec  7 22:21:37 2019
+  step 6000 lr 1 step-time 1.08s wps 5.18K ppl 17.20 gN 6.61 bleu 11.39, Sat Dec  7 22:23:25 2019
+# Save eval, global step 6000
+  loaded infer model parameters from ~/nmt_model/one/translate.ckpt-6000, time 0.58s
+  # 450
+    src: Tôi dùng nó để làm các cuộc khảo sát xuyên suốt vùng phía Nam của biển Nam Hải Trung Quốc và đặc biệt vùng biển Java .
+    ref: And I went sailing on it , and we did surveys throughout the southern South China sea and especially the Java Sea .
+    nmt: I use it to make the survey throughout the south of the South <unk> of China and especially in the sea .
+  loaded eval model parameters from ~/nmt_model/one/translate.ckpt-6000, time 0.49s
+  eval dev: perplexity 16.05, time 4s, Sat Dec  7 22:23:33 2019.
+  eval test: perplexity 14.70, time 4s, Sat Dec  7 22:23:37 2019.
+  step 6100 lr 1 step-time 1.10s wps 5.15K ppl 17.08 gN 6.70 bleu 11.39, Sat Dec  7 22:25:26 2019
+  step 6200 lr 1 step-time 1.09s wps 5.12K ppl 16.50 gN 6.48 bleu 11.39, Sat Dec  7 22:27:16 2019
+# Finished an epoch, step 6258. Perform external evaluation
+  loaded infer model parameters from ~/nmt_model/one/translate.ckpt-6000, time 0.77s
+  # 1337
+    src: Và bạn không chỉ có thể thực hiện với những kỹ thuật kiểu như thế này , mà còn nhờ vào &quot; giải pháp đám đông &quot;
+    ref: And you can do this with techniques like this , but also by crowd-sourcing .
+    nmt: And you don &apos;t just do with the techniques like this , but also for the <unk> . &quot;
+  loaded infer model parameters from ~/nmt_model/one/translate.ckpt-6000, time 0.61s
+# External evaluation, global step 6000
+  decoding to output ~/nmt_model/one/output_dev
+  done, num sentences 1553, num translations per input 1, time 61s, Sat Dec  7 22:29:23 2019.
+  bleu dev: 17.2
+  saving hparams to ~/nmt_model/one/hparams
+# External evaluation, global step 6000
+  decoding to output ~/nmt_model/one/output_test
+  done, num sentences 1268, num translations per input 1, time 59s, Sat Dec  7 22:30:24 2019.
+  bleu test: 19.1
+  saving hparams to ~/nmt_model/one/hparams
+  step 6300 lr 1 step-time 1.09s wps 5.04K ppl 15.20 gN 7.19 bleu 17.16, Sat Dec  7 22:31:10 2019
+  step 6400 lr 1 step-time 1.08s wps 5.19K ppl 13.83 gN 6.67 bleu 17.16, Sat Dec  7 22:32:58 2019
+  step 6500 lr 1 step-time 1.08s wps 5.22K ppl 13.94 gN 6.83 bleu 17.16, Sat Dec  7 22:34:46 2019
+  step 6600 lr 1 step-time 1.07s wps 5.20K ppl 14.07 gN 6.90 bleu 17.16, Sat Dec  7 22:36:33 2019
+  step 6700 lr 1 step-time 1.08s wps 5.20K ppl 13.98 gN 6.83 bleu 17.16, Sat Dec  7 22:38:21 2019
+  step 6800 lr 1 step-time 1.09s wps 5.21K ppl 13.87 gN 6.88 bleu 17.16, Sat Dec  7 22:40:11 2019
+  step 6900 lr 1 step-time 1.07s wps 5.19K ppl 13.34 gN 6.66 bleu 17.16, Sat Dec  7 22:41:58 2019
+  step 7000 lr 1 step-time 1.08s wps 5.17K ppl 13.16 gN 6.63 bleu 17.16, Sat Dec  7 22:43:46 2019
+# Save eval, global step 7000
+  loaded infer model parameters from ~/nmt_model/one/translate.ckpt-7000, time 0.34s
+  # 395
+    src: 56 % vụ án hiếp dâm không được xử lý .
+    ref: 56 percent of all rape cases don &apos;t result .
+    nmt: It &apos;s <unk> percent of the <unk> .
+  loaded eval model parameters from ~/nmt_model/one/translate.ckpt-7000, time 0.33s
+  eval dev: perplexity 13.75, time 4s, Sat Dec  7 22:43:52 2019.
+  eval test: perplexity 12.53, time 4s, Sat Dec  7 22:43:56 2019.
+  step 7100 lr 1 step-time 1.09s wps 5.18K ppl 13.40 gN 6.64 bleu 17.16, Sat Dec  7 22:45:45 2019
+  step 7200 lr 1 step-time 1.08s wps 5.18K ppl 13.20 gN 6.63 bleu 17.16, Sat Dec  7 22:47:33 2019
+  step 7300 lr 1 step-time 1.09s wps 5.15K ppl 13.46 gN 6.82 bleu 17.16, Sat Dec  7 22:49:22 2019
+# Finished an epoch, step 7301. Perform external evaluation
+  loaded infer model parameters from ~/nmt_model/one/translate.ckpt-7000, time 0.34s
+  # 898
+    src: Video này đã có gần 50 triệu lượt xem vào năm nay .
+    ref: It &apos;s been viewed nearly 50 million times this year .
+    nmt: This video has been 50 million miles now .
+  loaded infer model parameters from ~/nmt_model/one/translate.ckpt-7000, time 0.32s
+# External evaluation, global step 7000
+  decoding to output ~/nmt_model/one/output_dev
+  done, num sentences 1553, num translations per input 1, time 57s, Sat Dec  7 22:50:21 2019.
+  bleu dev: 17.2
+  saving hparams to ~/nmt_model/one/hparams
+# External evaluation, global step 7000
+  decoding to output ~/nmt_model/one/output_test
+  done, num sentences 1268, num translations per input 1, time 59s, Sat Dec  7 22:51:22 2019.
+  bleu test: 20.2
+  saving hparams to ~/nmt_model/one/hparams
+  step 7400 lr 1 step-time 1.09s wps 5.11K ppl 11.07 gN 7.26 bleu 17.23, Sat Dec  7 22:53:10 2019
+  step 7500 lr 1 step-time 1.08s wps 5.17K ppl 11.06 gN 6.78 bleu 17.23, Sat Dec  7 22:54:59 2019
+  step 7600 lr 1 step-time 1.10s wps 5.19K ppl 11.25 gN 6.90 bleu 17.23, Sat Dec  7 22:56:48 2019
+  step 7700 lr 1 step-time 1.08s wps 5.14K ppl 11.02 gN 6.76 bleu 17.23, Sat Dec  7 22:58:36 2019
+  step 7800 lr 1 step-time 1.08s wps 5.17K ppl 11.12 gN 6.68 bleu 17.23, Sat Dec  7 23:00:25 2019
+  step 7900 lr 1 step-time 1.10s wps 5.18K ppl 11.30 gN 6.97 bleu 17.23, Sat Dec  7 23:02:15 2019
+  step 8000 lr 1 step-time 1.07s wps 5.14K ppl 10.96 gN 6.63 bleu 17.23, Sat Dec  7 23:04:02 2019
+# Save eval, global step 8000
+  loaded infer model parameters from ~/nmt_model/one/translate.ckpt-8000, time 0.34s
+  # 374
+    src: Và dù không đứng trước mắt tôi , nhưng tôi vẫn có thể nhìn thấy người canh giữ bước tới bước lui
+    ref: And out of the corner of my eye , I could see this janitor pacing back and forth .
+    nmt: And although I don &apos;t stand in front of my eyes , but I can still see the person holding the next step coming up .
+  loaded eval model parameters from ~/nmt_model/one/translate.ckpt-8000, time 0.34s
+  eval dev: perplexity 12.35, time 4s, Sat Dec  7 23:04:08 2019.
+  eval test: perplexity 11.31, time 4s, Sat Dec  7 23:04:13 2019.
+  step 8100 lr 1 step-time 1.10s wps 5.16K ppl 11.17 gN 6.80 bleu 17.23, Sat Dec  7 23:06:03 2019
+  step 8200 lr 1 step-time 1.09s wps 5.17K ppl 11.05 gN 6.73 bleu 17.23, Sat Dec  7 23:07:52 2019
+  step 8300 lr 1 step-time 1.07s wps 5.15K ppl 10.98 gN 6.61 bleu 17.23, Sat Dec  7 23:09:39 2019
+# Finished an epoch, step 8344. Perform external evaluation
+  loaded infer model parameters from ~/nmt_model/one/translate.ckpt-8000, time 0.32s
+  # 923
+    src: Và tất cả chúng ta đều cảm thấy vài sự sở hữu trong nền văn hoá nhạc pop của chính mình .
+    ref: And we all now feel some ownership in our own pop culture .
+    nmt: And we all feel a little bit in our own culture .
+  loaded infer model parameters from ~/nmt_model/one/translate.ckpt-8000, time 0.31s
+# External evaluation, global step 8000
+  decoding to output ~/nmt_model/one/output_dev
+  done, num sentences 1553, num translations per input 1, time 69s, Sat Dec  7 23:11:38 2019.
+  bleu dev: 19.1
+  saving hparams to ~/nmt_model/one/hparams
+# External evaluation, global step 8000
+  decoding to output ~/nmt_model/one/output_test
+  done, num sentences 1268, num translations per input 1, time 66s, Sat Dec  7 23:12:44 2019.
+  bleu test: 21.1
+  saving hparams to ~/nmt_model/one/hparams
+  step 8400 lr 1 step-time 1.10s wps 5.09K ppl 10.07 gN 7.27 bleu 19.10, Sat Dec  7 23:13:47 2019
+  step 8500 lr 1 step-time 1.08s wps 5.17K ppl 9.21 gN 6.75 bleu 19.10, Sat Dec  7 23:15:35 2019
+  step 8600 lr 1 step-time 1.09s wps 5.16K ppl 9.24 gN 6.94 bleu 19.10, Sat Dec  7 23:17:24 2019
+  step 8700 lr 1 step-time 1.09s wps 5.18K ppl 9.47 gN 6.93 bleu 19.10, Sat Dec  7 23:19:13 2019
+  step 8800 lr 1 step-time 1.08s wps 5.19K ppl 9.58 gN 6.91 bleu 19.10, Sat Dec  7 23:21:01 2019
+  step 8900 lr 1 step-time 1.08s wps 5.17K ppl 9.50 gN 6.89 bleu 19.10, Sat Dec  7 23:22:49 2019
+  step 9000 lr 1 step-time 1.09s wps 5.17K ppl 9.38 gN 6.81 bleu 19.10, Sat Dec  7 23:24:38 2019
+# Save eval, global step 9000
+  loaded infer model parameters from ~/nmt_model/one/translate.ckpt-9000, time 0.30s
+  # 48
+    src: Mẹ mở cửa hàng máy tính rồi học nghề chuyên viên thẩm mĩ và mở một cơ sở kinh doanh khác .
+    ref: She opened a computer store then studied to be a beautician and opened another business .
+    nmt: She opened the computer doors and then went to a <unk> and open a different business facility .
+  loaded eval model parameters from ~/nmt_model/one/translate.ckpt-9000, time 0.30s
+  eval dev: perplexity 12.14, time 4s, Sat Dec  7 23:24:44 2019.
+  eval test: perplexity 10.86, time 4s, Sat Dec  7 23:24:48 2019.
+  step 9100 lr 0.5 step-time 1.08s wps 5.16K ppl 8.43 gN 6.11 bleu 19.10, Sat Dec  7 23:26:37 2019
+  step 9200 lr 0.5 step-time 1.08s wps 5.20K ppl 8.37 gN 6.18 bleu 19.10, Sat Dec  7 23:28:25 2019
+  step 9300 lr 0.5 step-time 1.07s wps 5.15K ppl 8.06 gN 6.13 bleu 19.10, Sat Dec  7 23:30:12 2019
+# Finished an epoch, step 9387. Perform external evaluation
+  loaded infer model parameters from ~/nmt_model/one/translate.ckpt-9000, time 0.35s
+  # 972
+    src: Và ý tôi không phải là phù thuỷ hay rồng , ý tôi là loại phép màu trẻ thơ , những ý tưởng chúng ta đều ấp ủ khi còn bé .
+    ref: And I don &apos;t mean wizards and dragons , I mean the kind of childhood magic , those ideas that we all harbored as children .
+    nmt: And I mean , I &apos;m not <unk> or <unk> , I mean that we &apos;re all <unk> as a child .
+  loaded infer model parameters from ~/nmt_model/one/translate.ckpt-9000, time 0.32s
+# External evaluation, global step 9000
+  decoding to output ~/nmt_model/one/output_dev
+  done, num sentences 1553, num translations per input 1, time 63s, Sat Dec  7 23:32:52 2019.
+  bleu dev: 18.8
+  saving hparams to ~/nmt_model/one/hparams
+# External evaluation, global step 9000
+  decoding to output ~/nmt_model/one/output_test
+  done, num sentences 1268, num translations per input 1, time 64s, Sat Dec  7 23:33:56 2019.
+  bleu test: 21.4
+  saving hparams to ~/nmt_model/one/hparams
+  step 9400 lr 0.5 step-time 1.10s wps 5.09K ppl 8.15 gN 6.94 bleu 19.10, Sat Dec  7 23:34:12 2019
+  step 9500 lr 0.5 step-time 1.07s wps 5.15K ppl 6.61 gN 6.34 bleu 19.10, Sat Dec  7 23:35:59 2019
+  step 9600 lr 0.5 step-time 1.10s wps 5.16K ppl 6.86 gN 6.70 bleu 19.10, Sat Dec  7 23:37:49 2019
+  step 9700 lr 0.5 step-time 1.08s wps 5.17K ppl 6.85 gN 6.68 bleu 19.10, Sat Dec  7 23:39:37 2019
+  step 9800 lr 0.5 step-time 1.09s wps 5.18K ppl 6.97 gN 6.72 bleu 19.10, Sat Dec  7 23:41:26 2019
+  step 9900 lr 0.5 step-time 1.09s wps 5.18K ppl 7.04 gN 6.80 bleu 19.10, Sat Dec  7 23:43:15 2019
+  step 10000 lr 0.5 step-time 1.08s wps 5.15K ppl 6.86 gN 6.79 bleu 19.10, Sat Dec  7 23:45:03 2019
+# Save eval, global step 10000
+  loaded infer model parameters from ~/nmt_model/one/translate.ckpt-10000, time 0.32s
+  # 510
+    src: Và họ phát hiện ra là trung bình CEO đã làm khoảng 139 nhiệm vụ trong 1 tuần
+    ref: And they found that the average CEO engaged in about 139 tasks in a week .
+    nmt: And they found that the average was already about <unk> tasks in a week .
+  loaded eval model parameters from ~/nmt_model/one/translate.ckpt-10000, time 0.33s
+  eval dev: perplexity 10.88, time 4s, Sat Dec  7 23:45:09 2019.
+  eval test: perplexity 9.77, time 4s, Sat Dec  7 23:45:13 2019.
+  loaded infer model parameters from ~/nmt_model/one/translate.ckpt-10000, time 0.31s
+  # 1546
+    src: Quyền riêng tư phải được đảm bảo .
+    ref: Privacy is implied .
+    nmt: Power has to be secure .
+  loaded infer model parameters from ~/nmt_model/one/translate.ckpt-10000, time 0.31s
+# External evaluation, global step 10000
+  decoding to output ~/nmt_model/one/output_dev
+  done, num sentences 1553, num translations per input 1, time 62s, Sat Dec  7 23:46:18 2019.
+  bleu dev: 20.9
+  saving hparams to ~/nmt_model/one/hparams
+# External evaluation, global step 10000
+  decoding to output ~/nmt_model/one/output_test
+  done, num sentences 1268, num translations per input 1, time 60s, Sat Dec  7 23:47:20 2019.
+  bleu test: 23.3
+  saving hparams to ~/nmt_model/one/hparams
+  step 10100 lr 0.25 step-time 1.09s wps 5.17K ppl 6.70 gN 6.53 bleu 20.93, Sat Dec  7 23:49:08 2019
+  step 10200 lr 0.25 step-time 1.10s wps 5.20K ppl 6.77 gN 6.64 bleu 20.93, Sat Dec  7 23:50:59 2019
+  step 10300 lr 0.25 step-time 1.08s wps 5.16K ppl 6.55 gN 6.52 bleu 20.93, Sat Dec  7 23:52:46 2019
+  step 10400 lr 0.25 step-time 1.09s wps 5.16K ppl 6.71 gN 6.61 bleu 20.93, Sat Dec  7 23:54:35 2019
+# Finished an epoch, step 10430. Perform external evaluation
+  loaded infer model parameters from ~/nmt_model/one/translate.ckpt-10000, time 0.31s
+  # 1441
+    src: Một vài năm trước tôi đã bắt đầu phát triển littleBits .
+    ref: A few years ago I started developing littleBits .
+    nmt: A few years ago I started <unk> .
+  loaded infer model parameters from ~/nmt_model/one/translate.ckpt-10000, time 0.32s
+# External evaluation, global step 10000
+  decoding to output ~/nmt_model/one/output_dev
+  done, num sentences 1553, num translations per input 1, time 61s, Sat Dec  7 23:56:10 2019.
+  bleu dev: 20.9
+  saving hparams to ~/nmt_model/one/hparams
+# External evaluation, global step 10000
+  decoding to output ~/nmt_model/one/output_test
+  done, num sentences 1268, num translations per input 1, time 59s, Sat Dec  7 23:57:10 2019.
+  bleu test: 23.3
+  saving hparams to ~/nmt_model/one/hparams
+  step 10500 lr 0.25 step-time 1.08s wps 5.12K ppl 6.04 gN 7.10 bleu 20.93, Sat Dec  7 23:58:26 2019
+  step 10600 lr 0.25 step-time 1.08s wps 5.24K ppl 5.82 gN 6.81 bleu 20.93, Sun Dec  8 00:00:14 2019
+  step 10700 lr 0.25 step-time 1.06s wps 5.17K ppl 5.63 gN 6.74 bleu 20.93, Sun Dec  8 00:02:00 2019
+  step 10800 lr 0.25 step-time 1.10s wps 5.21K ppl 5.87 gN 7.02 bleu 20.93, Sun Dec  8 00:03:50 2019
+  step 10900 lr 0.25 step-time 1.07s wps 5.18K ppl 5.80 gN 6.95 bleu 20.93, Sun Dec  8 00:05:37 2019
+  step 11000 lr 0.25 step-time 1.09s wps 5.20K ppl 5.84 gN 7.04 bleu 20.93, Sun Dec  8 00:07:25 2019
+# Save eval, global step 11000
+  loaded infer model parameters from ~/nmt_model/one/translate.ckpt-11000, time 0.29s
+  # 402
+    src: Thực chất là tỉ lệ phạm tội bạo lực vẫn ở mức tương đối ổn định .
+    ref: Well actually the violent crime rate has remained relatively stable .
+    nmt: In fact , the criminal crime rate is still the right .
+  loaded eval model parameters from ~/nmt_model/one/translate.ckpt-11000, time 0.30s
+  eval dev: perplexity 10.81, time 4s, Sun Dec  8 00:07:31 2019.
+  eval test: perplexity 9.47, time 4s, Sun Dec  8 00:07:35 2019.
+  step 11100 lr 0.125 step-time 1.09s wps 5.17K ppl 5.76 gN 6.93 bleu 20.93, Sun Dec  8 00:09:24 2019
+  step 11200 lr 0.125 step-time 1.08s wps 5.17K ppl 5.83 gN 6.94 bleu 20.93, Sun Dec  8 00:11:12 2019
+  step 11300 lr 0.125 step-time 1.10s wps 5.19K ppl 5.91 gN 7.02 bleu 20.93, Sun Dec  8 00:13:02 2019
+  step 11400 lr 0.125 step-time 1.08s wps 5.17K ppl 5.79 gN 6.99 bleu 20.93, Sun Dec  8 00:14:50 2019
+# Finished an epoch, step 11473. Perform external evaluation
+  loaded infer model parameters from ~/nmt_model/one/translate.ckpt-11000, time 0.36s
+  # 87
+    src: Ba tháng sau tôi chuyển địa điểm và chuyến phiêu lưu lại tiếp diễn .
+    ref: Three months later I had relocated , and the adventure has continued .
+    nmt: Three months later I <unk> the site and the adventure on .
+  loaded infer model parameters from ~/nmt_model/one/translate.ckpt-11000, time 0.34s
+# External evaluation, global step 11000
+  decoding to output ~/nmt_model/one/output_dev
+  done, num sentences 1553, num translations per input 1, time 63s, Sun Dec  8 00:17:13 2019.
+  bleu dev: 21.0
+  saving hparams to ~/nmt_model/one/hparams
+# External evaluation, global step 11000
+  decoding to output ~/nmt_model/one/output_test
+  done, num sentences 1268, num translations per input 1, time 60s, Sun Dec  8 00:18:14 2019.
+  bleu test: 23.8
+  saving hparams to ~/nmt_model/one/hparams
+  step 11500 lr 0.125 step-time 1.09s wps 5.03K ppl 5.54 gN 7.48 bleu 21.04, Sun Dec  8 00:18:45 2019
+  step 11600 lr 0.125 step-time 1.09s wps 5.12K ppl 5.25 gN 6.98 bleu 21.04, Sun Dec  8 00:20:34 2019
+  step 11700 lr 0.125 step-time 1.08s wps 5.16K ppl 5.30 gN 7.06 bleu 21.04, Sun Dec  8 00:22:22 2019
+  step 11800 lr 0.125 step-time 1.10s wps 5.14K ppl 5.28 gN 7.21 bleu 21.04, Sun Dec  8 00:24:12 2019
+  step 11900 lr 0.125 step-time 1.09s wps 5.15K ppl 5.37 gN 7.17 bleu 21.04, Sun Dec  8 00:26:01 2019
+  step 12000 lr 0.125 step-time 1.09s wps 5.17K ppl 5.36 gN 7.22 bleu 21.04, Sun Dec  8 00:27:50 2019
+# Save eval, global step 12000
+  loaded infer model parameters from ~/nmt_model/one/translate.ckpt-12000, time 0.47s
+  # 536
+    src: Chúng tôi đã mở 1 quầy nếm thử nhỏ ngay gần cửa vào cửa hàng .
+    ref: We set up a little tasting booth right near the entrance of the store .
+    nmt: We opened a little taste of <unk> right next to the store .
+  loaded eval model parameters from ~/nmt_model/one/translate.ckpt-12000, time 0.32s
+  eval dev: perplexity 10.99, time 4s, Sun Dec  8 00:27:56 2019.
+  eval test: perplexity 9.49, time 4s, Sun Dec  8 00:28:00 2019.
+  loaded infer model parameters from ~/nmt_model/one/translate.ckpt-12000, time 0.31s
+  # 666
+    src: Thế nghĩa là cứ 10 lần đập bóng thì cầu thủ đó đập bóng an toàn 3 lần .
+    ref: That means that ballplayer batted safely , hit safely three times out of 10 at bats .
+    nmt: That means that every 10 times the ball hit the ball three times .
+  loaded eval model parameters from ~/nmt_model/one/translate.ckpt-12000, time 0.35s
+  eval dev: perplexity 10.99, time 4s, Sun Dec  8 00:28:07 2019.
+  eval test: perplexity 9.49, time 4s, Sun Dec  8 00:28:11 2019.
+  loaded infer model parameters from ~/nmt_model/one/translate.ckpt-12000, time 0.32s
+# External evaluation, global step 12000
+  decoding to output ~/nmt_model/one/output_dev
+  done, num sentences 1553, num translations per input 1, time 61s, Sun Dec  8 00:29:13 2019.
+  bleu dev: 21.0
+  saving hparams to ~/nmt_model/one/hparams
+# External evaluation, global step 12000
+  decoding to output ~/nmt_model/one/output_test
+  done, num sentences 1268, num translations per input 1, time 57s, Sun Dec  8 00:30:11 2019.
+  bleu test: 24.0
+  saving hparams to ~/nmt_model/one/hparams
+# Final, step 12000 lr 0.125 step-time 1.09s wps 5.17K ppl 5.36 gN 7.22 dev ppl 10.99, dev bleu 21.0, test ppl 9.49, test bleu 24.0, Sun Dec  8 00:30:11 2019
+# Done training!, time 15242s, Sun Dec  8 00:30:11 2019.
+# Start evaluating saved best models.
+  loaded infer model parameters from ~/nmt_model/one/best_bleu/translate.ckpt-11000, time 0.34s
+  # 1343
+    src: Và chắc chắn rằng chúng ta có thể tìm thấy chuỗi cửa hàng thức ăn nhanh .
+    ref: And sure , we could find fast food chains .
+    nmt: And sure we can find the chains for fast food .
+  loaded eval model parameters from ~/nmt_model/one/best_bleu/translate.ckpt-11000, time 0.31s
+  eval dev: perplexity 10.81, time 4s, Sun Dec  8 00:30:16 2019.
+  eval test: perplexity 9.47, time 4s, Sun Dec  8 00:30:21 2019.
+  loaded infer model parameters from ~/nmt_model/one/best_bleu/translate.ckpt-11000, time 0.31s
+# External evaluation, global step 11000
+  decoding to output ~/nmt_model/one/output_dev
+  done, num sentences 1553, num translations per input 1, time 61s, Sun Dec  8 00:31:23 2019.
+  bleu dev: 21.0
+  saving hparams to ~/nmt_model/one/hparams
+# External evaluation, global step 11000
+  decoding to output ~/nmt_model/one/output_test
+  done, num sentences 1268, num translations per input 1, time 58s, Sun Dec  8 00:32:22 2019.
+  bleu test: 23.8
+  saving hparams to ~/nmt_model/one/hparams
+# Best bleu, step 11000 lr 0.125 step-time 1.09s wps 5.17K ppl 5.36 gN 7.22 dev ppl 10.81, dev bleu 21.0, test ppl 9.47, test bleu 23.8, Sun Dec  8 00:32:22 2019
